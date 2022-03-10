@@ -1,0 +1,5 @@
+xpm_memory.sv,systemverilog,xpm,../../../../../../../Vitis/Vivado/2021.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv,
+xpm_VCOMP.vhd,vhdl,xpm,../../../../../../../Vitis/Vivado/2021.1/data/ip/xpm/xpm_VCOMP.vhd,
+blk_mem_gen_v8_4.v,verilog,blk_mem_gen_v8_4_4,../../../ipstatic/simulation/blk_mem_gen_v8_4.v,
+InstructionMem.v,verilog,xil_defaultlib,../../../../MIPS_CPU.gen/sources_1/ip/InstructionMem/sim/InstructionMem.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
