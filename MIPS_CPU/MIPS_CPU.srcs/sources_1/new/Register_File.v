@@ -22,6 +22,7 @@
 
 module Register_File(
     input clk,
+    input wirte_ena,
     input [4:0] RAddr_A,
     input [4:0] RAddr_B,
     input [4:0] WAddr_C,
@@ -31,16 +32,19 @@ module Register_File(
     );
     reg [31:0] Register_Pile[0:31];
 
-    always@(posedge clk) begin
+    always@(*) begin
         RData_A <= Register_Pile[RAddr_A];
         RData_B <= Register_Pile[RAddr_B];
     end
 
     always@(negedge clk) begin
+        if(wirte_ena)begin
         case(WAddr_C)
             0: Register_Pile[0] <= 0;
             default: Register_Pile[WAddr_C] <= WData_C;
         endcase
+        end
+        else begin end
     end
 
 

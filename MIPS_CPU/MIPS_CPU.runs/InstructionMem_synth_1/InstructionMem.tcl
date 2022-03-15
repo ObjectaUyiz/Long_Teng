@@ -72,12 +72,14 @@ proc create_report { reportName command } {
 OPTRACE "InstructionMem_synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 4
+set_param synth.incrementalSynthesisCache C:/Users/Lucifer/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-1136-LAPTOP-GRCVOBS5/incrSyn
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a200tfbv676-3
+create_project -in_memory -part xc7a35tfgg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -92,8 +94,8 @@ set_property ip_output_repo d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.cache/ip [c
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/ip/InstructionMem/InstructionMem.xci
-set_property used_in_implementation false [get_files -all d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_ooc.xdc]
+read_ip -quiet d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/ip/InstructionMem_1/InstructionMem.xci
+set_property used_in_implementation false [get_files -all d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -116,7 +118,7 @@ if { $cached_ip eq {} } {
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top InstructionMem -part xc7a200tfbv676-3 -mode out_of_context
+synth_design -top InstructionMem -part xc7a35tfgg484-1 -mode out_of_context
 OPTRACE "synth_design" END { }
 OPTRACE "Write IP Cache" START { }
 
@@ -164,32 +166,32 @@ create_report "InstructionMem_synth_1_synth_report_utilization_0" "report_utiliz
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem.dcp d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem.dcp
+  file copy -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem.dcp d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_stub.v
+  write_verilog -force -mode synth_stub d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_stub.vhdl
+  write_vhdl -force -mode synth_stub d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_sim_netlist.v
+  write_verilog -force -mode funcsim d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -199,32 +201,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem.dcp d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem.dcp
+  file copy -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem.dcp d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem_stub.v d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_stub.v
+  file rename -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem_stub.v d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem_stub.vhdl d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_stub.vhdl
+  file rename -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem_stub.vhdl d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem_sim_netlist.v d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_sim_netlist.v
+  file rename -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem_sim_netlist.v d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem_sim_netlist.vhdl d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_sim_netlist.vhdl
+  file rename -force D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/InstructionMem_synth_1/InstructionMem_sim_netlist.vhdl d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -233,13 +235,13 @@ if { [catch {
 
 if {[file isdir D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.ip_user_files/ip/InstructionMem]} {
   catch { 
-    file copy -force d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_stub.v D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.ip_user_files/ip/InstructionMem
+    file copy -force d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_stub.v D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.ip_user_files/ip/InstructionMem
   }
 }
 
 if {[file isdir D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.ip_user_files/ip/InstructionMem]} {
   catch { 
-    file copy -force d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem/InstructionMem_stub.vhdl D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.ip_user_files/ip/InstructionMem
+    file copy -force d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/InstructionMem_1/InstructionMem_stub.vhdl D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.ip_user_files/ip/InstructionMem
   }
 }
 file delete __synthesis_is_running__

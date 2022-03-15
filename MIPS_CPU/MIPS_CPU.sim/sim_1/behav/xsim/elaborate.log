@@ -1,14 +1,20 @@
 Vivado Simulator v2021.1
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: D:/Vitis/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 8be848a6781048e2aee97b1e52ebce01 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot HaultDesignTest_behav xil_defaultlib.HaultDesignTest xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Vitis/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 8be848a6781048e2aee97b1e52ebce01 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot TOPtest_behav xil_defaultlib.TOPtest xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 2 for port 'I_sel' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:50]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'ena' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:53]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.HaultDesign
-Compiling module xil_defaultlib.HaultDesignTest
+Compiling module xil_defaultlib.Instruction_fetch
+Compiling module xil_defaultlib.InstructionMemory
+Compiling module xil_defaultlib.IF_ID_registers
+Compiling module xil_defaultlib.InstructionDecoder
+Compiling module xil_defaultlib.MIPS_CPU_TOP
+Compiling module xil_defaultlib.TOPtest
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot HaultDesignTest_behav
+Built simulation snapshot TOPtest_behav

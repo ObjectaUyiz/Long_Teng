@@ -1,2 +1,0 @@
-InstructionMem.v,verilog,xil_defaultlib,../../../../MIPS_CPU.gen/sources_1/ip/InstructionMem/sim/InstructionMem.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v

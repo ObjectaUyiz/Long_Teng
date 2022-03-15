@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log ID_Controller.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ID_Controller.tcl
+EAStep vivado -log MIPS_CPU_TOP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPS_CPU_TOP.tcl
