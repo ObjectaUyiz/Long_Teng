@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Tue Mar 15 18:00:59 2022
+| Date         : Fri Mar 18 21:03:20 2022
 | Host         : LAPTOP-GRCVOBS5 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file MIPS_CPU_TOP_utilization_synth.rpt -pb MIPS_CPU_TOP_utilization_synth.pb
 | Design       : MIPS_CPU_TOP
@@ -30,12 +30,12 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |    4 |     0 |          0 |     20800 |  0.02 |
-|   LUT as Logic          |    4 |     0 |          0 |     20800 |  0.02 |
+| Slice LUTs*             |    5 |     0 |          0 |     20800 |  0.02 |
+|   LUT as Logic          |    5 |     0 |          0 |     20800 |  0.02 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |    8 |     0 |          0 |     41600 |  0.02 |
-|   Register as Flip Flop |    8 |     0 |          0 |     41600 |  0.02 |
-|   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
+| Slice Registers         |   70 |     0 |          0 |     41600 |  0.17 |
+|   Register as Flip Flop |   69 |     0 |          0 |     41600 |  0.17 |
+|   Register as Latch     |    1 |     0 |          0 |     41600 | <0.01 |
 | F7 Muxes                |    0 |     0 |          0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 4     |          Yes |           - |        Reset |
+| 31    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 4     |          Yes |       Reset |            - |
+| 39    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   36 |     0 |          0 |       250 | 14.40 |
+| Bonded IOB                  |  146 |     0 |          0 |       250 | 58.40 |
 | Bonded IPADs                |    0 |     0 |          0 |        14 |  0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |         8 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         5 |  0.00 |
@@ -149,14 +149,16 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |   32 |                  IO |
+| OBUF     |  138 |                  IO |
+| FDRE     |   39 |        Flop & Latch |
+| FDCE     |   30 |        Flop & Latch |
+| CARRY4   |   16 |          CarryLogic |
+| OBUFT    |    4 |                  IO |
 | IBUF     |    4 |                  IO |
-| FDRE     |    4 |        Flop & Latch |
-| FDCE     |    4 |        Flop & Latch |
 | LUT5     |    3 |                 LUT |
-| LUT1     |    2 |                 LUT |
-| CARRY4   |    2 |          CarryLogic |
+| LUT1     |    3 |                 LUT |
 | LUT2     |    1 |                 LUT |
+| LDCE     |    1 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -164,9 +166,11 @@ Table of Contents
 8. Black Boxes
 --------------
 
-+----------+------+
-| Ref Name | Used |
-+----------+------+
++------------+------+
+|  Ref Name  | Used |
++------------+------+
+| DataMemory |    1 |
++------------+------+
 
 
 9. Instantiated Netlists

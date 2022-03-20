@@ -35,7 +35,7 @@ module Register_wirte_address_selection(
         2'b00: REG_write_addr_inter = RD;
         2'b01: REG_write_addr_inter = RT;
         2'b10: REG_write_addr_inter = Constant;
-        default:;
+        default:REG_write_addr_inter = 0;
         endcase
     end
 

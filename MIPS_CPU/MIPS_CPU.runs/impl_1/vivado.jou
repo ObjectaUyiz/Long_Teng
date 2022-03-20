@@ -2,8 +2,8 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Tue Mar 15 18:01:57 2022
-# Process ID: 16668
+# Start of session at: Fri Mar 18 21:03:28 2022
+# Process ID: 14552
 # Current directory: D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/impl_1
 # Command line: vivado.exe -log MIPS_CPU_TOP.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MIPS_CPU_TOP.tcl -notrace
 # Log file: D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/impl_1/MIPS_CPU_TOP.vdi

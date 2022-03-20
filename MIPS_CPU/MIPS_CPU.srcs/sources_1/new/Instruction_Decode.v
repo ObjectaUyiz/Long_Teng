@@ -32,11 +32,11 @@ module InstructionDecoder(
     output [25:0] instr_index
     );
 
-    assign opcode = Instruction[5:0];
-    assign rs = Instruction[4:0];
-    assign rt = Instruction[4:0];
-    assign rd = Instruction[4:0];
-    assign sa = Instruction[4:0];
+    assign opcode = Instruction[31:26];
+    assign rs = Instruction[25:21];
+    assign rt = Instruction[20:16];
+    assign rd = Instruction[15:11];
+    assign sa = Instruction[10:6];
     assign fun = Instruction[5:0];
     assign imm = Instruction[15:0];
     assign instr_index = Instruction[25:0];

@@ -2,8 +2,8 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Tue Mar 15 18:00:40 2022
-# Process ID: 24932
+# Start of session at: Fri Mar 18 21:02:50 2022
+# Process ID: 15620
 # Current directory: D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1
 # Command line: vivado.exe -log MIPS_CPU_TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPS_CPU_TOP.tcl
 # Log file: D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/MIPS_CPU_TOP.vds
@@ -14,28 +14,26 @@ Command: synth_design -top MIPS_CPU_TOP -part xc7a35tfgg484-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tfgg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 15664
+INFO: [Synth 8-7075] Helper process launched with PID 11720
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1230.742 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'MIPS_CPU_TOP' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Instruction_fetch' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_fetch.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Instruction_fetch' (1#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_fetch.v:23]
-WARNING: [Synth 8-7071] port 'target_offset' of module 'Instruction_fetch' is unconnected for instance 'If' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:63]
-WARNING: [Synth 8-7071] port 'instr_index' of module 'Instruction_fetch' is unconnected for instance 'If' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:63]
-WARNING: [Synth 8-7071] port 'rs' of module 'Instruction_fetch' is unconnected for instance 'If' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:63]
-WARNING: [Synth 8-7023] instance 'If' of module 'Instruction_fetch' has 10 connections declared, but only 7 given [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:63]
+WARNING: [Synth 8-7071] port 'target_offset' of module 'Instruction_fetch' is unconnected for instance 'If' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:86]
+WARNING: [Synth 8-7071] port 'instr_index' of module 'Instruction_fetch' is unconnected for instance 'If' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:86]
+WARNING: [Synth 8-7071] port 'rs' of module 'Instruction_fetch' is unconnected for instance 'If' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:86]
+WARNING: [Synth 8-7023] instance 'If' of module 'Instruction_fetch' has 10 connections declared, but only 7 given [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:86]
 INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/InstructionMemory.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (2#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/InstructionMemory.v:23]
 INFO: [Synth 8-6157] synthesizing module 'IF_ID_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IF_ID_registers.v:2]
 INFO: [Synth 8-6155] done synthesizing module 'IF_ID_registers' (3#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IF_ID_registers.v:2]
 INFO: [Synth 8-6157] synthesizing module 'InstructionDecoder' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'InstructionDecoder' (4#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'rs' does not match port width (5) of module 'InstructionDecoder' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:67]
-WARNING: [Synth 8-689] width (1) of port connection 'rt' does not match port width (5) of module 'InstructionDecoder' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:67]
-WARNING: [Synth 8-689] width (1) of port connection 'rd' does not match port width (5) of module 'InstructionDecoder' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:67]
 INFO: [Synth 8-6157] synthesizing module 'PC_next_add4' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/PC_next_4.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'PC_next_add4' (5#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/PC_next_4.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Register_wirte_address_selection' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_wirte_address_selection.v:23]
@@ -45,65 +43,170 @@ INFO: [Synth 8-226] default block is never used [D:/Long_Teng/Long_Teng/MIPS_CPU
 INFO: [Synth 8-6155] done synthesizing module 'Immediate_dealing' (7#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Immediate_dealing.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Register_File' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_File.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Register_File' (8#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_File.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ID_EXE_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_var_convert.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EXE_var_convert' (9#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_var_convert.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'ID_opcode_EXE' does not match port width (6) of module 'ID_EXE_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:99]
+WARNING: [Synth 8-689] width (1) of port connection 'ID_fun_EXE' does not match port width (6) of module 'ID_EXE_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:99]
 INFO: [Synth 8-6157] synthesizing module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v:66]
-INFO: [Synth 8-6155] done synthesizing module 'ID_EXE_registers' (9#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v:23]
-WARNING: [Synth 8-689] width (5) of port connection 'EXE_PC_next_4_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (5) of port connection 'EXE_REGrs_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (5) of port connection 'EXE_REGrt_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (32) of port connection 'EXE_rs_MEM' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (3) of port connection 'EXE_rt_MEM' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (3) of port connection 'EXE_rd_MEM' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_Imm_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (4) of port connection 'EXE_Sel_alua' does not match port width (3) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (5) of port connection 'EXE_Sel_alub' does not match port width (3) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (32) of port connection 'EXE_SignalException' does not match port width (1) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (32) of port connection 'EXE_sel_alu_op' does not match port width (4) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-WARNING: [Synth 8-689] width (32) of port connection 'EXE_WB_addr_MEM' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:76]
-INFO: [Synth 8-6155] done synthesizing module 'MIPS_CPU_TOP' (10#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EXE_registers' (10#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_opcode_MEM' does not match port width (6) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_fun_MEM' does not match port width (6) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (5) of port connection 'EXE_PC_next_4_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (5) of port connection 'EXE_REGrs_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (5) of port connection 'EXE_REGrt_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_rs_MEM' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (3) of port connection 'EXE_rd_MEM' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (3) of port connection 'EXE_Imm_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_sa' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (4) of port connection 'EXE_Sel_alua' does not match port width (3) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (5) of port connection 'EXE_Sel_alub' does not match port width (3) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (32) of port connection 'EXE_SignalException' does not match port width (1) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (32) of port connection 'EXE_sel_alu_op' does not match port width (4) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+WARNING: [Synth 8-689] width (32) of port connection 'EXE_WB_addr_MEM' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+INFO: [Synth 8-6157] synthesizing module 'ALU_input_selection' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_input_selection.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_input_selection' (11#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_input_selection.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU_module' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_module' (12#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU_Flag_Handler' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_Flag_Handler.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_Flag_Handler' (13#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_Flag_Handler.v:23]
+INFO: [Synth 8-6157] synthesizing module 'EXCEPTION_Handler' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXCEPTION_Handler.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'EXCEPTION_Handler' (14#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXCEPTION_Handler.v:23]
+INFO: [Synth 8-6157] synthesizing module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_var_convert.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'EXE_MEM_var_convert' (15#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_var_convert.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_opcode_MEM' does not match port width (6) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_fun_MEM' does not match port width (6) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_rs_MEM' does not match port width (5) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_rt_MEM' does not match port width (5) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_rd_MEM' does not match port width (5) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_immediate_MEM' does not match port width (32) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_ALU_Result_MEM' does not match port width (32) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_REGrs_MEM' does not match port width (32) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_REGrt_MEM' does not match port width (32) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_alu_flag_MEM' does not match port width (8) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+WARNING: [Synth 8-689] width (1) of port connection 'EXE_PC_next_4_MEM' does not match port width (32) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+INFO: [Synth 8-6157] synthesizing module 'EXE_MEM_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_registers.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_registers.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'EXE_MEM_registers' (16#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_registers.v:2]
+WARNING: [Synth 8-689] width (1) of port connection 'MEM_PC_next_4_WB' does not match port width (32) of module 'EXE_MEM_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:113]
+INFO: [Synth 8-6157] synthesizing module 'Datamemory_addr_translater' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Datamemory_addr_translater.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Datamemory_addr_translater' (17#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Datamemory_addr_translater.v:23]
+INFO: [Synth 8-6157] synthesizing module 'datamemory_writecontrol' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/datamemory_writecontrol.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'datamemory_writecontrol' (18#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/datamemory_writecontrol.v:23]
+INFO: [Synth 8-6157] synthesizing module 'IO_cache' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IO_cache.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'IO_cache' (19#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IO_cache.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DataMemory' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/.Xil/Vivado-15620-LAPTOP-GRCVOBS5/realtime/DataMemory_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (20#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/.Xil/Vivado-15620-LAPTOP-GRCVOBS5/realtime/DataMemory_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (13) of module 'DataMemory' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:118]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB_var_converter' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_var_converter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_var_converter' (21#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_var_converter.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'MEM_alu_flag_WB' does not match port width (8) of module 'MEM_WB_var_converter' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:120]
+WARNING: [Synth 8-689] width (1) of port connection 'MEM_PC_next_4_WB' does not match port width (32) of module 'MEM_WB_var_converter' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:120]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_registers' (22#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v:2]
+WARNING: [Synth 8-689] width (32) of port connection 'WB_Memory_data_out_WB' does not match port width (4) of module 'MEM_WB_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:123]
+WARNING: [Synth 8-689] width (1) of port connection 'WB_PC_next_4_WB' does not match port width (32) of module 'MEM_WB_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:123]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:126]
+INFO: [Synth 8-6157] synthesizing module 'writeback_data_selection' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v:23]
+INFO: [Synth 8-226] default block is never used [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'writeback_data_selection' (23#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v:23]
+WARNING: [Synth 8-7071] port 'data_wb' of module 'writeback_data_selection' is unconnected for instance 'wds' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:126]
+WARNING: [Synth 8-7023] instance 'wds' of module 'writeback_data_selection' has 7 connections declared, but only 6 given [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:126]
+INFO: [Synth 8-6155] done synthesizing module 'MIPS_CPU_TOP' (24#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:23]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1230.742 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1230.742 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1230.742 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 1230.742 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/DataMemory/DataMemory/DataMemory_in_context.xdc] for cell 'dm'
+Finished Parsing XDC File [d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/DataMemory/DataMemory/DataMemory_in_context.xdc] for cell 'dm'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1232.504 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1232.504 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7a35tfgg484-1
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for dm. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1232.504 ; gain = 1.762
+---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'REG_write_addr_inter_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_wirte_address_selection.v:35]
+WARNING: [Synth 8-327] inferring latch for variable 'outputR_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:67]
+WARNING: [Synth 8-327] inferring latch for variable 'sign_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:68]
+WARNING: [Synth 8-327] inferring latch for variable 'data_wr_type_inter_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/datamemory_writecontrol.v:32]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input   33 Bit       Adders := 1     
+	   3 Input   33 Bit       Adders := 1     
 	   2 Input   32 Bit       Adders := 3     
+	   3 Input   32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 38    
-	                5 Bit    Registers := 4     
-	                4 Bit    Registers := 1     
+	               32 Bit    Registers := 48    
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 6     
+	                5 Bit    Registers := 10    
+	                4 Bit    Registers := 3     
 	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Multipliers : 
+	              32x32  Multipliers := 1     
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 3     
-	   4 Input   32 Bit        Muxes := 6     
+	   4 Input   32 Bit        Muxes := 17    
 	  15 Input   32 Bit        Muxes := 1     
 	   3 Input   32 Bit        Muxes := 1     
+	  12 Input   32 Bit        Muxes := 1     
 	   2 Input   30 Bit        Muxes := 1     
-	   4 Input    5 Bit        Muxes := 4     
-	   4 Input    4 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 2     
+	   4 Input    6 Bit        Muxes := 6     
+	   4 Input    5 Bit        Muxes := 10    
+	  16 Input    5 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 2     
+	   4 Input    4 Bit        Muxes := 3     
+	  18 Input    4 Bit        Muxes := 1     
 	   4 Input    3 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 18    
-	   4 Input    1 Bit        Muxes := 5     
+	   2 Input    2 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 22    
+	   4 Input    1 Bit        Muxes := 8     
 	   3 Input    1 Bit        Muxes := 30    
+	  18 Input    1 Bit        Muxes := 2     
+	   5 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -116,25 +219,59 @@ BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+DSP Report: Generating DSP outputR0, operation Mode is: A*B.
+DSP Report: operator outputR0 is absorbed into DSP outputR0.
+DSP Report: operator outputR0 is absorbed into DSP outputR0.
+DSP Report: Generating DSP outputR0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator outputR0 is absorbed into DSP outputR0.
+DSP Report: operator outputR0 is absorbed into DSP outputR0.
+DSP Report: Generating DSP outputR0, operation Mode is: A*B.
+DSP Report: operator outputR0 is absorbed into DSP outputR0.
+DSP Report: operator outputR0 is absorbed into DSP outputR0.
+DSP Report: Generating DSP outputR0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator outputR0 is absorbed into DSP outputR0.
+DSP Report: operator outputR0 is absorbed into DSP outputR0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
-No constraint files found.
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ALU_module  | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU_module  | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU_module  | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU_module  | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1232.504 ; gain = 1.762
+---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -148,96 +285,93 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-4649] Removing BlackBox instance ic of module IO_cache having unconnected or no output ports
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |DataMemory    |         1|
++------+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |     2|
-|3     |LUT1   |     2|
-|4     |LUT2   |     1|
-|5     |LUT5   |     3|
-|6     |FDCE   |     4|
-|7     |FDRE   |     4|
-|8     |IBUF   |     4|
-|9     |OBUF   |    32|
-+------+-------+------+
-
-Report Instance Areas: 
-+------+---------+------------------+------+
-|      |Instance |Module            |Cells |
-+------+---------+------------------+------+
-|1     |top      |                  |    53|
-|2     |  If     |Instruction_fetch |    12|
-|3     |  ifid   |IF_ID_registers   |     4|
-+------+---------+------------------+------+
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |DataMemory |     1|
+|2     |BUFG       |     1|
+|3     |CARRY4     |    16|
+|4     |LUT1       |     3|
+|5     |LUT2       |     1|
+|6     |LUT5       |     3|
+|7     |FDCE       |    30|
+|8     |FDRE       |    39|
+|9     |LD         |     1|
+|10    |IBUF       |     4|
+|11    |OBUF       |   138|
+|12    |OBUFT      |     4|
++------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1229.152 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1232.504 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1229.152 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1232.504 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1229.152 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1232.504 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 1 instances were transformed.
+  LD => LDCE: 1 instance 
 
-Synth Design complete, checksum: 579c9be4
+Synth Design complete, checksum: 4d0bfd05
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered.
+68 Infos, 44 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1229.152 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1232.504 ; gain = 1.762
 INFO: [Common 17-1381] The checkpoint 'D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/MIPS_CPU_TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MIPS_CPU_TOP_utilization_synth.rpt -pb MIPS_CPU_TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 15 18:00:59 2022...
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 18 21:03:20 2022...

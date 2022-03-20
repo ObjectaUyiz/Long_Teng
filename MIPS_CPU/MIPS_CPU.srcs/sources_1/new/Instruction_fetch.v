@@ -36,9 +36,9 @@ module Instruction_fetch(
     reg [31:0] PC_control,PC_next_control;
     reg [31:0] empty;
     reg [1:0] counter;
-    initial begin
-        PC_inter_next = 0;
-    end
+    // initial begin
+    //     PC_inter_next = 0;
+    // end
 
     always@(*)begin
         PC_temp = PC_inter_next + 4;

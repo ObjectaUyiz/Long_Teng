@@ -126,7 +126,6 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 4
-  set_param synth.incrementalSynthesisCache C:/Users/Lucifer/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9492-LAPTOP-GRCVOBS5/incrSyn
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tfgg484-1
   set_property design_mode GateLvl [current_fileset]
@@ -137,9 +136,11 @@ OPTRACE "set parameters" START { }
   set_property parent.project_path D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.xpr [current_project]
   set_property ip_output_repo D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/MIPS_CPU_TOP.dcp
+  read_ip -quiet D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/ip/DataMemory/DataMemory.xci
 OPTRACE "read constraints: implementation" START { }
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }

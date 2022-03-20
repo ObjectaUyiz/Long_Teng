@@ -22,6 +22,8 @@
 
 module ID_Controller(
     input clk,
+    input reset,
+    input areset,
     input [31:0] Instruction,
     input [7:0] Aluflag_wb,
     output [1:0] Sel_PC_out,
@@ -29,11 +31,15 @@ module ID_Controller(
     output [1:0] Sel_Imm_out,
     output Sel_REG_w_ena_out,
     output Sel_extend_out,
-    output [4:0] Sel_pipeline_out,
+    output [1:0] IF_Pipeline_ID,
+    output [1:0] ID_Pipeline_EXE,
+    output [1:0] EXE_Pipeline_MEM,
+    output [1:0] MEM_Pipeline_WB,
     output [2:0] Sel_alua_out,
     output [2:0] Sel_alub_out,
     output [2:0] Jump_condition_out,
     output SignalException_out,
+    output Ifena,
     output Data_WR_out,
     output Data_WR_Byte_out,
     output [1:0] Sel_WB_data_out
@@ -45,8 +51,11 @@ module ID_Controller(
     parameter   IntegerOverflow=0,Zero=1,ALess=2,BLess=3,Error=7;
     reg [5:0] state_EXE,state_ID,state_MEM,state_WB;
 
+    reg [1:0] IF_Pipeline_ID_inter,ID_Pipeline_EXE_inter,EXE_Pipeline_MEM_inter,MEM_Pipeline_WB_inter;
+
     //IF stage selecter
     reg [1:0] Sel_PC;
+    reg Ifena_inter;
     //ID stage selecter
     reg [1:0] Sel_REG_w,Sel_Imm;
     reg Sel_REG_w_ena,Sel_extend;
@@ -91,6 +100,20 @@ module ID_Controller(
             6'b101000: state_ID = SB;
             6'b101011: state_ID = SW;
         endcase
+    end
+
+    always@(*)begin
+        if(areset) {IF_Pipeline_ID_inter,ID_Pipeline_EXE_inter,EXE_Pipeline_MEM_inter,MEM_Pipeline_WB_inter} = 0;
+        else begin
+            
+        end
+    end
+
+    always@(*)begin
+        if(areset) Ifena_inter = 0;
+        else begin
+            
+        end
     end
     
     always@(*)begin
@@ -243,5 +266,9 @@ module ID_Controller(
     assign Data_WR_Byte_out = Data_WR_Byte;
     assign Sel_WB_data_out = Sel_WB_data;
     assign Jump_condition_out = Jump_condition;
+    assign IF_Pipeline_ID = IF_Pipeline_ID_inter;
+    assign ID_Pipeline_EXE = ID_Pipeline_EXE_inter;
+    assign EXE_Pipeline_MEM = EXE_Pipeline_MEM_inter;
+    assign MEM_Pipeline_WB = MEM_Pipeline_WB_inter;
 
 endmodule

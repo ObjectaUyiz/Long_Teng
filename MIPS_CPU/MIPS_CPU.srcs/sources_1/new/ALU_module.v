@@ -81,7 +81,7 @@ module ALU_module(
             BLTZ,BLEZ: {sign[0],outputR} = {inputA[31],inputA} - {inputB[31],inputB};
             BGTZ,BGEZ: {sign[0],outputR} = {inputA[31],inputA} - {inputB[31],inputB};
             JALR,JR,JAL,J:;
-            default:;
+            default:outputR = 32'hffff_ffff;
         endcase
     end
 

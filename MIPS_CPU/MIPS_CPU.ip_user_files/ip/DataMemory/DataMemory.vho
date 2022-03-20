@@ -55,15 +55,11 @@
 COMPONENT DataMemory
   PORT (
     clka : IN STD_LOGIC;
+    ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    clkb : IN STD_LOGIC;
-    rstb : IN STD_LOGIC;
-    addrb : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    doutb : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    rsta_busy : OUT STD_LOGIC;
-    rstb_busy : OUT STD_LOGIC
+    douta : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -75,15 +71,11 @@ END COMPONENT;
 your_instance_name : DataMemory
   PORT MAP (
     clka => clka,
+    ena => ena,
     wea => wea,
     addra => addra,
     dina => dina,
-    clkb => clkb,
-    rstb => rstb,
-    addrb => addrb,
-    doutb => doutb,
-    rsta_busy => rsta_busy,
-    rstb_busy => rstb_busy
+    douta => douta
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
 
