@@ -21,9 +21,10 @@
 
 
 module ALU_module(
+    input areset,
     input [5:0] opcode,
     input [5:0] fun,
-    input [5:0] rt,
+    input [4:0] rt,
     input [31:0] inputA,//rs
     input [31:0] inputB,//rt,imm
     output reg [31:0] outputR,
@@ -38,6 +39,10 @@ module ALU_module(
     reg [7:0] sign;
     reg [4:0] state; 
     always @(*) begin
+        if(areset)begin
+            state = ERROR;
+        end
+        else begin
         case(opcode)
             6'b000000: state = (fun==6'b100000)?ADD:(fun==6'b100001)?ADDU:(fun==6'b100010)?SUB:
                                 (fun==6'b101010)?SLT:(fun==6'b100100)?AND:(fun==6'b100101)?OR:
@@ -60,11 +65,16 @@ module ALU_module(
             6'b000011: state = JAL;
             default: state = ERROR;
         endcase
+        end
     end
 
     always@(*)begin
+        if(areset) begin
+            outputR = 0;
+            sign = 0;
+        end
         case(state)
-            ERROR: outputR = 32'hffff_ffff;
+            ERROR: outputR = 0;
             ADDI,ADD: {sign[0],outputR} = {inputA[31],inputA} + {inputB[31],inputB};
             ADDIU,ADDU: outputR = inputA + inputB;
             SUB: {sign[0],outputR} = {inputA[31],inputA} - {inputB[31],inputB};
@@ -80,15 +90,16 @@ module ALU_module(
             BNE,BEQ: outputR = inputA - inputB;
             BLTZ,BLEZ: {sign[0],outputR} = {inputA[31],inputA} - {inputB[31],inputB};
             BGTZ,BGEZ: {sign[0],outputR} = {inputA[31],inputA} - {inputB[31],inputB};
-            JALR,JR,JAL,J:;
-            default:outputR = 32'hffff_ffff;
+            JALR,JR,JAL,J:outputR = inputA + inputB;
+            default:outputR = 0;
         endcase
     end
 
     assign flag[0] = ~(sign[0]==outputR[31]);
     assign flag[1] = ~|outputR;
-    assign flag[2] = (sign[0]==outputR[31])&&outputR[31];
-    assign flag[3] = (sign[0]==outputR[31])&&outputR[31];
+    assign flag[2] = (sign[0]==outputR[31])&outputR[31];//a<b
+    assign flag[3] = (sign[0]==outputR[31])&(~outputR[31]);//a>b
+    assign flag[6:4] = 0;
     assign flag[7] = {8{(state==ERROR)}}&Error;
 
 endmodule

@@ -1,9 +1,11 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../MIPS_CPU.gen/sources_1/ip/DataMemory/sim/DataMemory.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/ALU_Flag_Handler.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/ALU_input_selection.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/ALU_module.v" \
+"../../../../MIPS_CPU.srcs/sources_1/new/CP0.v" \
+"../../../../MIPS_CPU.srcs/sources_1/new/DataMem_dataselection.v" \
+"../../../../MIPS_CPU.srcs/sources_1/new/DataMemoryFile.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/Datamemory_addr_translater.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/EXCEPTION_Handler.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/EXE_MEM_registers.v" \
@@ -17,13 +19,13 @@ verilog xil_defaultlib  \
 "../../../../MIPS_CPU.srcs/sources_1/new/InstructionMemory.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/Instruction_fetch.v" \
+"../../../../MIPS_CPU.srcs/sources_1/new/Instruction_write_table.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/MEM_WB_var_converter.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/PC_next_4.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/Register_File.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/Register_wirte_address_selection.v" \
-"../../../../MIPS_CPU.srcs/sources_1/new/datamemory_writecontrol.v" \
 "../../../../MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v" \
 "../../../../MIPS_CPU.srcs/sim_1/new/TOP test.v" \
 

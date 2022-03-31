@@ -26,4 +26,7 @@ module IO_cache(
     input [31:0] Data_in,
     output [31:0] Data_o
     );
+
+    assign Data_o = Data_in;
+    
 endmodule

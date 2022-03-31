@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Fri Mar 18 21:03:20 2022
+| Date         : Wed Mar 30 22:01:32 2022
 | Host         : LAPTOP-GRCVOBS5 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file MIPS_CPU_TOP_utilization_synth.rpt -pb MIPS_CPU_TOP_utilization_synth.pb
 | Design       : MIPS_CPU_TOP
@@ -30,14 +30,14 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |    5 |     0 |          0 |     20800 |  0.02 |
-|   LUT as Logic          |    5 |     0 |          0 |     20800 |  0.02 |
+| Slice LUTs*             | 3747 |     0 |          0 |     20800 | 18.01 |
+|   LUT as Logic          | 3747 |     0 |          0 |     20800 | 18.01 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |   70 |     0 |          0 |     41600 |  0.17 |
-|   Register as Flip Flop |   69 |     0 |          0 |     41600 |  0.17 |
-|   Register as Latch     |    1 |     0 |          0 |     41600 | <0.01 |
-| F7 Muxes                |    0 |     0 |          0 |     16300 |  0.00 |
-| F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
+| Slice Registers         | 8913 |     0 |          0 |     41600 | 21.43 |
+|   Register as Flip Flop | 8872 |     0 |          0 |     41600 | 21.33 |
+|   Register as Latch     |   41 |     0 |          0 |     41600 |  0.10 |
+| F7 Muxes                | 1121 |     0 |          0 |     16300 |  6.88 |
+| F8 Muxes                |  544 |     0 |          0 |      8150 |  6.67 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -54,10 +54,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
-| 31    |          Yes |           - |        Reset |
+| 8208  |          Yes |           - |          Set |
+| 481   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 39    |          Yes |       Reset |            - |
+| 224   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |  146 |     0 |          0 |       250 | 58.40 |
+| Bonded IOB                  |   83 |     0 |          0 |       250 | 33.20 |
 | Bonded IPADs                |    0 |     0 |          0 |        14 |  0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |         8 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         5 |  0.00 |
@@ -115,7 +115,7 @@ Table of Contents
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
+| BUFGCTRL   |    2 |     0 |          0 |        32 |  6.25 |
 | BUFIO      |    0 |     0 |          0 |        20 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |         5 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |         5 |  0.00 |
@@ -149,28 +149,31 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |  138 |                  IO |
-| FDRE     |   39 |        Flop & Latch |
-| FDCE     |   30 |        Flop & Latch |
-| CARRY4   |   16 |          CarryLogic |
-| OBUFT    |    4 |                  IO |
-| IBUF     |    4 |                  IO |
-| LUT5     |    3 |                 LUT |
+| FDPE     | 8208 |        Flop & Latch |
+| LUT6     | 2927 |                 LUT |
+| MUXF7    | 1121 |               MuxFx |
+| MUXF8    |  544 |               MuxFx |
+| FDCE     |  440 |        Flop & Latch |
+| LUT2     |  403 |                 LUT |
+| LUT5     |  347 |                 LUT |
+| FDRE     |  224 |        Flop & Latch |
+| LUT4     |  167 |                 LUT |
+| LUT3     |  135 |                 LUT |
+| OBUF     |   64 |                  IO |
+| CARRY4   |   50 |          CarryLogic |
+| LDCE     |   41 |        Flop & Latch |
+| IBUF     |   19 |                  IO |
 | LUT1     |    3 |                 LUT |
-| LUT2     |    1 |                 LUT |
-| LDCE     |    1 |        Flop & Latch |
-| BUFG     |    1 |               Clock |
+| BUFG     |    2 |               Clock |
 +----------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+------------+------+
-|  Ref Name  | Used |
-+------------+------+
-| DataMemory |    1 |
-+------------+------+
++----------+------+
+| Ref Name | Used |
++----------+------+
 
 
 9. Instantiated Netlists

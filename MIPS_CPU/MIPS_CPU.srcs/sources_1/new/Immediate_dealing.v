@@ -21,6 +21,7 @@
 
 
 module Immediate_dealing(
+    input areset,
     input [1:0] Sel_imm,
     input Sel_extend,
     input [15:0] Immediate_in,
@@ -39,5 +40,5 @@ module Immediate_dealing(
         endcase
     end
 
-    assign Immediate = Immediate_inter;
+    assign Immediate = areset?0:Immediate_inter;
 endmodule

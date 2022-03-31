@@ -115,8 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -124,7 +123,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 4
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tfgg484-1
@@ -136,12 +134,11 @@ OPTRACE "set parameters" START { }
   set_property parent.project_path D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.xpr [current_project]
   set_property ip_output_repo D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/MIPS_CPU_TOP.dcp
-  read_ip -quiet D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/ip/DataMemory/DataMemory.xci
 OPTRACE "read constraints: implementation" START { }
+  read_xdc D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/constrs_1/new/test.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

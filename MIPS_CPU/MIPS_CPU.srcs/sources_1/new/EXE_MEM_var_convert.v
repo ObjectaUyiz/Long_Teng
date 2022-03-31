@@ -32,8 +32,16 @@ module EXE_MEM_var_convert(
     input [31:0] EXE_REGrt,
     input [7:0] EXE_alu_flag,
     input EXE_Exception_event_control,
-    input [3:0] EXE_data_rw_ena,
+    input [5:0] EXE_data_rw_ena,
     input [31:0] EXE_PC_next_4,
+    input [4:0] EXE_rf_write_addr,
+    input [2:0] EXE_mdata_sel,
+    input EXE_IntegerOverflow,
+    input EXE_AluaLessAlub,
+    input EXE_AlubLessAlua,
+    input EXE_Aluaeb,
+    input EXE_Zeroflag,
+    input EXE_Aluaneb,
     output [5:0] EXE_opcode_MEM,
     output [5:0] EXE_fun_MEM,
     output [4:0] EXE_rs_MEM,
@@ -45,8 +53,16 @@ module EXE_MEM_var_convert(
     output [31:0] EXE_REGrt_MEM,
     output [7:0] EXE_alu_flag_MEM,
     output EXE_Exception_event_control_MEM,
-    output [3:0] EXE_data_rw_ena_MEM,
-    output [31:0] EXE_PC_next_4_MEM
+    output [5:0] EXE_data_rw_ena_MEM,
+    output [31:0] EXE_PC_next_4_MEM,
+    output [4:0] EXE_rf_write_addr_MEM,
+    output [2:0] EXE_mdata_sel_MEM,
+    output EXE_IntegerOverflow_MEM,
+    output EXE_AluaLessAlub_MEM,
+    output EXE_AlubLessAlua_MEM,
+    output EXE_Aluaeb_MEM,
+    output EXE_Zeroflag_MEM,
+    output EXE_Aluaneb_MEM
     );
 
     assign EXE_opcode_MEM = EXE_opcode;
@@ -62,5 +78,13 @@ module EXE_MEM_var_convert(
     assign EXE_Exception_event_control_MEM = EXE_Exception_event_control;
     assign EXE_data_rw_ena_MEM = EXE_data_rw_ena;
     assign EXE_PC_next_4_MEM = EXE_PC_next_4;
+    assign EXE_rf_write_addr_MEM = EXE_rf_write_addr;
+    assign EXE_mdata_sel_MEM = EXE_mdata_sel;
+    assign EXE_IntegerOverflow_MEM = EXE_IntegerOverflow;
+    assign EXE_AluaLessAlub_MEM = EXE_AluaLessAlub;
+    assign EXE_AlubLessAlua_MEM = EXE_AlubLessAlua;
+    assign EXE_Aluaeb_MEM = EXE_Aluaeb;
+    assign EXE_Zeroflag_MEM = EXE_Zeroflag;
+    assign EXE_Aluaneb_MEM = EXE_Aluaneb;
 
 endmodule

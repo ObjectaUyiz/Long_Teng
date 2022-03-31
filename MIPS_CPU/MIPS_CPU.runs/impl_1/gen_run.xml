@@ -1,80 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tfgg484-1" LaunchTime="1647608566">
+<GenRun Id="impl_1" LaunchPart="xc7a35tfgg484-1" LaunchTime="1648649065">
   <File Type="ROUTE-PWR" Name="MIPS_CPU_TOP_power_routed.rpt"/>
   <File Type="PA-TCL" Name="MIPS_CPU_TOP.tcl"/>
-  <File Type="BITSTR-MMI" Name="MIPS_CPU_TOP.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="MIPS_CPU_TOP_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="MIPS_CPU_TOP_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="MIPS_CPU_TOP_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="MIPS_CPU_TOP_reports.tcl"/>
-  <File Type="OPT-TIMING" Name="MIPS_CPU_TOP_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="MIPS_CPU_TOP_opt.dcp"/>
+  <File Type="BITSTR-MSK" Name="MIPS_CPU_TOP.msk"/>
+  <File Type="ROUTE-CLK" Name="MIPS_CPU_TOP_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="MIPS_CPU_TOP.vdi"/>
+  <File Type="BG-BIT" Name="MIPS_CPU_TOP.bit"/>
+  <File Type="BG-DRC" Name="MIPS_CPU_TOP.drc"/>
+  <File Type="BG-BGN" Name="MIPS_CPU_TOP.bgn"/>
+  <File Type="BG-BIN" Name="MIPS_CPU_TOP.bin"/>
+  <File Type="BITSTR-RBT" Name="MIPS_CPU_TOP.rbt"/>
+  <File Type="BITSTR-NKY" Name="MIPS_CPU_TOP.nky"/>
+  <File Type="BITSTR-BMM" Name="MIPS_CPU_TOP_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="MIPS_CPU_TOP.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="MIPS_CPU_TOP_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="MIPS_CPU_TOP.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="MIPS_CPU_TOP.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="OPT-DRC" Name="MIPS_CPU_TOP_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="MIPS_CPU_TOP.hwdef"/>
-  <File Type="PWROPT-DCP" Name="MIPS_CPU_TOP_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="MIPS_CPU_TOP_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="MIPS_CPU_TOP_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="MIPS_CPU_TOP_placed.dcp"/>
   <File Type="PLACE-IO" Name="MIPS_CPU_TOP_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="MIPS_CPU_TOP_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="MIPS_CPU_TOP_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="MIPS_CPU_TOP_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="MIPS_CPU_TOP_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="MIPS_CPU_TOP_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="MIPS_CPU_TOP_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="MIPS_CPU_TOP.bin"/>
-  <File Type="PLACE-TIMING" Name="MIPS_CPU_TOP_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="MIPS_CPU_TOP_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="MIPS_CPU_TOP.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="MIPS_CPU_TOP_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="MIPS_CPU_TOP_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="MIPS_CPU_TOP_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="MIPS_CPU_TOP.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="MIPS_CPU_TOP_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="MIPS_CPU_TOP_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="MIPS_CPU_TOP_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="MIPS_CPU_TOP_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="MIPS_CPU_TOP_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="MIPS_CPU_TOP_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="MIPS_CPU_TOP_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="MIPS_CPU_TOP_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="MIPS_CPU_TOP_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="MIPS_CPU_TOP_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="MIPS_CPU_TOP_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="MIPS_CPU_TOP_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="MIPS_CPU_TOP_route_status.pb"/>
+  <File Type="ROUTE-DCP" Name="MIPS_CPU_TOP_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="MIPS_CPU_TOP_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="MIPS_CPU_TOP_routed_bb.dcp"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="MIPS_CPU_TOP_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="MIPS_CPU_TOP_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="MIPS_CPU_TOP_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="MIPS_CPU_TOP_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="MIPS_CPU_TOP_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="MIPS_CPU_TOP_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="MIPS_CPU_TOP_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="MIPS_CPU_TOP_bus_skew_routed.rpx"/>
+  <File Type="OPT-DCP" Name="MIPS_CPU_TOP_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="MIPS_CPU_TOP_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="MIPS_CPU_TOP_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="MIPS_CPU_TOP_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="MIPS_CPU_TOP_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="MIPS_CPU_TOP_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="MIPS_CPU_TOP_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="MIPS_CPU_TOP_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="MIPS_CPU_TOP_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="MIPS_CPU_TOP_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="MIPS_CPU_TOP_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="MIPS_CPU_TOP.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="MIPS_CPU_TOP_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="MIPS_CPU_TOP_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="MIPS_CPU_TOP.nky"/>
-  <File Type="BITSTR-BMM" Name="MIPS_CPU_TOP_bd.bmm"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="MIPS_CPU_TOP_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="MIPS_CPU_TOP_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="MIPS_CPU_TOP_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="MIPS_CPU_TOP.pdi"/>
   <File Type="RCFI_FILE" Name="MIPS_CPU_TOP.rcfi"/>
   <File Type="CFI_FILE" Name="MIPS_CPU_TOP.cfi"/>
   <File Type="RNPI_FILE" Name="MIPS_CPU_TOP.rnpi"/>
   <File Type="NPI_FILE" Name="MIPS_CPU_TOP.npi"/>
   <File Type="RBD_FILE" Name="MIPS_CPU_TOP.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="MIPS_CPU_TOP.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="MIPS_CPU_TOP.sysdef"/>
-  <File Type="BG-BGN" Name="MIPS_CPU_TOP.bgn"/>
-  <File Type="BG-DRC" Name="MIPS_CPU_TOP.drc"/>
-  <File Type="RDI-RDI" Name="MIPS_CPU_TOP.vdi"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ALU_Flag_Handler.v">
@@ -92,6 +74,27 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/ALU_module.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/CP0.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DataMem_dataselection.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DataMemoryFile.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -120,6 +123,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/EXE_MEM_var_convert.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ID_Controller.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -182,6 +192,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Instruction_write_table.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/MEM_WB_registers.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -211,13 +228,6 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/Register_wirte_address_selection.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/datamemory_writecontrol.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -254,14 +264,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ID_Controller.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/designtest.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -284,7 +286,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/test.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/test.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -305,6 +314,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="DataMemory"/>
 </GenRun>

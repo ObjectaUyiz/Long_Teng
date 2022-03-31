@@ -1,11 +1,15 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/DataMemory/sim/DataMemory.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataMemory
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_Flag_Handler.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU_Flag_Handler
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_input_selection.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU_input_selection
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU_module
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/CP0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CP0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMem_dataselection.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMem_dataselection
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMemoryFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemoryFile
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Datamemory_addr_translater.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Datamemory_addr_translater
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXCEPTION_Handler.v" into library xil_defaultlib
@@ -16,7 +20,10 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIP
 INFO: [VRFC 10-311] analyzing module EXE_MEM_var_convert
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ID_Controller
-INFO: [VRFC 10-2458] undeclared symbol Sel_pipeline_out, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v:261]
+INFO: [VRFC 10-2458] undeclared symbol Sel_REG_w_ena_out, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v:482]
+INFO: [VRFC 10-2458] undeclared symbol Sel_pipeline_out, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v:484]
+INFO: [VRFC 10-2458] undeclared symbol Data_WR_out, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v:488]
+INFO: [VRFC 10-2458] undeclared symbol Data_WR_Byte_out, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v:489]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ID_EXE_registers
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_var_convert.v" into library xil_defaultlib
@@ -33,34 +40,22 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIP
 INFO: [VRFC 10-311] analyzing module InstructionDecoder
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_fetch.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Instruction_fetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_write_table.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instruction_write_table
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MEM_WB_registers
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_var_converter.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MEM_WB_var_converter
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MIPS_CPU_TOP
-INFO: [VRFC 10-2458] undeclared symbol ID_rf_write, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:99]
-INFO: [VRFC 10-2458] undeclared symbol EXE_immediate, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:106]
-INFO: [VRFC 10-2458] undeclared symbol EXE_Exception_event_control, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:111]
-INFO: [VRFC 10-2458] undeclared symbol EXE_immediate_MEM, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:113]
-INFO: [VRFC 10-2458] undeclared symbol EXE_ALU_Result_MEM, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:113]
-INFO: [VRFC 10-2458] undeclared symbol EXE_REGrs_MEM, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:113]
-INFO: [VRFC 10-2458] undeclared symbol EXE_REGrt_MEM, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:113]
-INFO: [VRFC 10-2458] undeclared symbol EXE_alu_flag_MEM, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:113]
-INFO: [VRFC 10-2458] undeclared symbol EXE_Exception_event_control_MEM, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:113]
-INFO: [VRFC 10-2458] undeclared symbol EXE_PC_next_4_MEM, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:113]
-INFO: [VRFC 10-2458] undeclared symbol MEM_PC_next_4, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:116]
-INFO: [VRFC 10-2458] undeclared symbol MEM_alu_flag_WB, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:124]
-INFO: [VRFC 10-2458] undeclared symbol MEM_PC_next_4_WB, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:124]
-INFO: [VRFC 10-2458] undeclared symbol WB_PC_next_4, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:127]
+INFO: [VRFC 10-2458] undeclared symbol set_EXE, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:116]
+INFO: [VRFC 10-2458] undeclared symbol EXE_Exception_event_control, assumed default net type wire [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:120]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/PC_next_4.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module PC_next_add4
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_File.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Register_File
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_wirte_address_selection.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Register_wirte_address_selection
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/datamemory_writecontrol.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module datamemory_writecontrol
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module writeback_data_selection
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sim_1/new/TOP test.v" into library xil_defaultlib

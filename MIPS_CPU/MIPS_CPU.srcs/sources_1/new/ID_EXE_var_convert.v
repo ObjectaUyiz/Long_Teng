@@ -34,7 +34,10 @@ module ID_EXE_var_convert(
     input [31:0] ID_REGrt,
     input [31:0] ID_PC_next_4,
     input ID_SignalException,
-    input [3:0] ID_data_rw_ena,
+    input [5:0] ID_data_rw_ena,
+    input [2:0] ID_sel_alua,
+    input [2:0] ID_sel_alub,
+    input [2:0] ID_mdata_sel,
     output [5:0] ID_opcode_EXE,
     output [5:0] ID_fun_EXE,
     output [4:0] ID_rs_EXE,
@@ -48,7 +51,10 @@ module ID_EXE_var_convert(
     output [31:0] ID_REGrt_EXE,
     output [31:0] ID_PC_next_4_EXE,
     output ID_SignalException_EXE,
-    output [3:0] ID_data_rw_ena_EXE
+    output [5:0] ID_data_rw_ena_EXE,
+    output [2:0] ID_sel_alua_EXE,
+    output [2:0] ID_sel_alub_EXE,
+    output [2:0] ID_mdata_sel_EXE
     );
 
     assign ID_opcode_EXE = ID_opcode;
@@ -65,4 +71,8 @@ module ID_EXE_var_convert(
     assign ID_PC_next_4_EXE = ID_PC_next_4;
     assign ID_SignalException_EXE = ID_SignalException;
     assign ID_data_rw_ena_EXE = ID_data_rw_ena;
+    assign ID_sel_alua_EXE = ID_sel_alua;
+    assign ID_sel_alub_EXE = ID_sel_alub;
+    assign ID_mdata_sel_EXE = ID_mdata_sel;
+
 endmodule

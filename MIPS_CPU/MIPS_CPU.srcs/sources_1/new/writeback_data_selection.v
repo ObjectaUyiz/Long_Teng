@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 03/18/2022 01:54:28 PM
+// Create Date: 03/18/3033 01:54:38 PM
 // Design Name: 
 // Module Name: writeback_data_selection
 // Project Name: 
@@ -31,25 +31,26 @@ module writeback_data_selection(
     );
 
     reg [31:0] data_wb_inter;
-    reg [1:0] sel_wb_data;
+    reg [2:0] sel_wb_data;
 
     always@(*)begin
         case(opcode)
-        6'b100000: sel_wb_data <= 2'b11;
-        6'b100011: sel_wb_data <= 2'b10;
-        6'b000011: sel_wb_data <= 2'b01;
-        6'b000000: sel_wb_data <= (fun==6'b001001)?2'b01:2'b00;
-        default: sel_wb_data <= 2'b00;
+        6'b100000: sel_wb_data <= 3'b011;
+        6'b100011: sel_wb_data <= 3'b010;
+        6'b000011: sel_wb_data <= 3'b001;
+        6'b000000: sel_wb_data <= (fun==6'b001001)?3'b001:(fun==6'b101010)?3'b100:3'b000;
+        default: sel_wb_data <= 3'b000;
         endcase
     end
 
     always@(*) begin
         case(sel_wb_data)
-        2'b00:data_wb_inter <= alu_result;
-        2'b01:data_wb_inter <= PC_next_a4;
-        2'b10:data_wb_inter <= mem_dataout;
-        2'b11:data_wb_inter <= {{24{mem_dataout[7]}},mem_dataout[7:0]};
-        default:;
+        3'b000:data_wb_inter <= alu_result;
+        3'b001:data_wb_inter <= PC_next_a4;
+        3'b010:data_wb_inter <= mem_dataout;
+        3'b011:data_wb_inter <= {{34{mem_dataout[7]}},mem_dataout[7:0]};
+        3'b100:data_wb_inter <= alu_flag[2];
+        default:data_wb_inter <= alu_result;
         endcase
     end
     assign data_wb = data_wb_inter;

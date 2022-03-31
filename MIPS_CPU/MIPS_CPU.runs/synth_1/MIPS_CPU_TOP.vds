@@ -2,8 +2,8 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Fri Mar 18 21:02:50 2022
-# Process ID: 15620
+# Start of session at: Wed Mar 30 21:56:31 2022
+# Process ID: 19040
 # Current directory: D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1
 # Command line: vivado.exe -log MIPS_CPU_TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MIPS_CPU_TOP.tcl
 # Log file: D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/MIPS_CPU_TOP.vds
@@ -17,152 +17,122 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tfgg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 11720
+INFO: [Synth 8-7075] Helper process launched with PID 13052
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1230.742 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1233.453 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'MIPS_CPU_TOP' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ID_Controller' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Instruction_write_table' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_write_table.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Instruction_write_table' (1#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_write_table.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ID_Controller' (2#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v:23]
+WARNING: [Synth 8-7071] port 'Sel_WB_data_out' of module 'ID_Controller' is unconnected for instance 'IDc' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:93]
+WARNING: [Synth 8-7023] instance 'IDc' of module 'ID_Controller' has 30 connections declared, but only 29 given [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:93]
+INFO: [Synth 8-6157] synthesizing module 'CP0' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/CP0.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'CP0' (3#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/CP0.v:23]
+WARNING: [Synth 8-7071] port 'time_clock' of module 'CP0' is unconnected for instance 'cp0' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:97]
+WARNING: [Synth 8-7023] instance 'cp0' of module 'CP0' has 13 connections declared, but only 12 given [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:97]
 INFO: [Synth 8-6157] synthesizing module 'Instruction_fetch' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_fetch.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Instruction_fetch' (1#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_fetch.v:23]
-WARNING: [Synth 8-7071] port 'target_offset' of module 'Instruction_fetch' is unconnected for instance 'If' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:86]
-WARNING: [Synth 8-7071] port 'instr_index' of module 'Instruction_fetch' is unconnected for instance 'If' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:86]
-WARNING: [Synth 8-7071] port 'rs' of module 'Instruction_fetch' is unconnected for instance 'If' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:86]
-WARNING: [Synth 8-7023] instance 'If' of module 'Instruction_fetch' has 10 connections declared, but only 7 given [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:86]
+INFO: [Synth 8-6155] done synthesizing module 'Instruction_fetch' (4#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_fetch.v:23]
 INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/InstructionMemory.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (2#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/InstructionMemory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (5#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/InstructionMemory.v:23]
 INFO: [Synth 8-6157] synthesizing module 'IF_ID_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IF_ID_registers.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'IF_ID_registers' (3#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IF_ID_registers.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'IF_ID_registers' (6#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IF_ID_registers.v:2]
 INFO: [Synth 8-6157] synthesizing module 'InstructionDecoder' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'InstructionDecoder' (4#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionDecoder' (7#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v:23]
 INFO: [Synth 8-6157] synthesizing module 'PC_next_add4' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/PC_next_4.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'PC_next_add4' (5#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/PC_next_4.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PC_next_add4' (8#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/PC_next_4.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Register_wirte_address_selection' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_wirte_address_selection.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Register_wirte_address_selection' (6#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_wirte_address_selection.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Register_wirte_address_selection' (9#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_wirte_address_selection.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Immediate_dealing' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Immediate_dealing.v:23]
-INFO: [Synth 8-226] default block is never used [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Immediate_dealing.v:34]
-INFO: [Synth 8-6155] done synthesizing module 'Immediate_dealing' (7#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Immediate_dealing.v:23]
+INFO: [Synth 8-226] default block is never used [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Immediate_dealing.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'Immediate_dealing' (10#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Immediate_dealing.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Register_File' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_File.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Register_File' (8#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_File.v:23]
+INFO: [Synth 8-3876] $readmem data file 'REGfile_init.list' is read successfully [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_File.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'Register_File' (11#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_File.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ID_EXE_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_var_convert.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ID_EXE_var_convert' (9#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_var_convert.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'ID_opcode_EXE' does not match port width (6) of module 'ID_EXE_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:99]
-WARNING: [Synth 8-689] width (1) of port connection 'ID_fun_EXE' does not match port width (6) of module 'ID_EXE_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EXE_var_convert' (12#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_var_convert.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'ID_EXE_registers' (10#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_opcode_MEM' does not match port width (6) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_fun_MEM' does not match port width (6) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (5) of port connection 'EXE_PC_next_4_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (5) of port connection 'EXE_REGrs_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (5) of port connection 'EXE_REGrt_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_rs_MEM' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (3) of port connection 'EXE_rd_MEM' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (3) of port connection 'EXE_Imm_MEM' does not match port width (32) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_sa' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (4) of port connection 'EXE_Sel_alua' does not match port width (3) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (5) of port connection 'EXE_Sel_alub' does not match port width (3) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (32) of port connection 'EXE_SignalException' does not match port width (1) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (32) of port connection 'EXE_sel_alu_op' does not match port width (4) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
-WARNING: [Synth 8-689] width (32) of port connection 'EXE_WB_addr_MEM' does not match port width (5) of module 'ID_EXE_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:103]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v:102]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EXE_registers' (13#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ALU_input_selection' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_input_selection.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ALU_input_selection' (11#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_input_selection.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_input_selection' (14#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_input_selection.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ALU_module' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ALU_module' (12#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_module' (15#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ALU_Flag_Handler' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_Flag_Handler.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ALU_Flag_Handler' (13#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_Flag_Handler.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_Flag_Handler' (16#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_Flag_Handler.v:23]
 INFO: [Synth 8-6157] synthesizing module 'EXCEPTION_Handler' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXCEPTION_Handler.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'EXCEPTION_Handler' (14#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXCEPTION_Handler.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'EXCEPTION_Handler' (17#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXCEPTION_Handler.v:23]
 INFO: [Synth 8-6157] synthesizing module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_var_convert.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'EXE_MEM_var_convert' (15#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_var_convert.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_opcode_MEM' does not match port width (6) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_fun_MEM' does not match port width (6) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_rs_MEM' does not match port width (5) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_rt_MEM' does not match port width (5) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_rd_MEM' does not match port width (5) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_immediate_MEM' does not match port width (32) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_ALU_Result_MEM' does not match port width (32) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_REGrs_MEM' does not match port width (32) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_REGrt_MEM' does not match port width (32) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_alu_flag_MEM' does not match port width (8) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
-WARNING: [Synth 8-689] width (1) of port connection 'EXE_PC_next_4_MEM' does not match port width (32) of module 'EXE_MEM_var_convert' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:110]
+INFO: [Synth 8-6155] done synthesizing module 'EXE_MEM_var_convert' (18#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_var_convert.v:23]
 INFO: [Synth 8-6157] synthesizing module 'EXE_MEM_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_registers.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_registers.v:49]
-INFO: [Synth 8-6155] done synthesizing module 'EXE_MEM_registers' (16#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_registers.v:2]
-WARNING: [Synth 8-689] width (1) of port connection 'MEM_PC_next_4_WB' does not match port width (32) of module 'EXE_MEM_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:113]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_registers.v:101]
+INFO: [Synth 8-6155] done synthesizing module 'EXE_MEM_registers' (19#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_registers.v:2]
 INFO: [Synth 8-6157] synthesizing module 'Datamemory_addr_translater' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Datamemory_addr_translater.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Datamemory_addr_translater' (17#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Datamemory_addr_translater.v:23]
-INFO: [Synth 8-6157] synthesizing module 'datamemory_writecontrol' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/datamemory_writecontrol.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'datamemory_writecontrol' (18#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/datamemory_writecontrol.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Datamemory_addr_translater' (20#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Datamemory_addr_translater.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DataMem_dataselection' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMem_dataselection.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DataMem_dataselection' (21#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMem_dataselection.v:23]
 INFO: [Synth 8-6157] synthesizing module 'IO_cache' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IO_cache.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'IO_cache' (19#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IO_cache.v:23]
-INFO: [Synth 8-6157] synthesizing module 'DataMemory' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/.Xil/Vivado-15620-LAPTOP-GRCVOBS5/realtime/DataMemory_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (20#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/.Xil/Vivado-15620-LAPTOP-GRCVOBS5/realtime/DataMemory_stub.v:6]
-WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (13) of module 'DataMemory' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:118]
+INFO: [Synth 8-6155] done synthesizing module 'IO_cache' (22#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IO_cache.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DataMemoryFile' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMemoryFile.v:23]
+INFO: [Synth 8-226] default block is never used [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMemoryFile.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemoryFile' (23#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMemoryFile.v:23]
 INFO: [Synth 8-6157] synthesizing module 'MEM_WB_var_converter' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_var_converter.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_var_converter' (21#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_var_converter.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'MEM_alu_flag_WB' does not match port width (8) of module 'MEM_WB_var_converter' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:120]
-WARNING: [Synth 8-689] width (1) of port connection 'MEM_PC_next_4_WB' does not match port width (32) of module 'MEM_WB_var_converter' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:120]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_var_converter' (24#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_var_converter.v:23]
 INFO: [Synth 8-6157] synthesizing module 'MEM_WB_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v:42]
-INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_registers' (22#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v:2]
-WARNING: [Synth 8-689] width (32) of port connection 'WB_Memory_data_out_WB' does not match port width (4) of module 'MEM_WB_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:123]
-WARNING: [Synth 8-689] width (1) of port connection 'WB_PC_next_4_WB' does not match port width (32) of module 'MEM_WB_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:123]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:126]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v:92]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_registers' (25#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v:2]
 INFO: [Synth 8-6157] synthesizing module 'writeback_data_selection' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v:23]
-INFO: [Synth 8-226] default block is never used [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v:47]
-INFO: [Synth 8-6155] done synthesizing module 'writeback_data_selection' (23#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v:23]
-WARNING: [Synth 8-7071] port 'data_wb' of module 'writeback_data_selection' is unconnected for instance 'wds' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:126]
-WARNING: [Synth 8-7023] instance 'wds' of module 'writeback_data_selection' has 7 connections declared, but only 6 given [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:126]
-INFO: [Synth 8-6155] done synthesizing module 'MIPS_CPU_TOP' (24#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'writeback_data_selection' (26#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MIPS_CPU_TOP' (27#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1230.742 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:02:20 ; elapsed = 00:02:21 . Memory (MB): peak = 2857.551 ; gain = 1624.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1230.742 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:24 ; elapsed = 00:02:25 . Memory (MB): peak = 2857.551 ; gain = 1624.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1230.742 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:24 ; elapsed = 00:02:25 . Memory (MB): peak = 2857.551 ; gain = 1624.098
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 1230.742 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2857.551 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/DataMemory/DataMemory/DataMemory_in_context.xdc] for cell 'dm'
-Finished Parsing XDC File [d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/DataMemory/DataMemory/DataMemory_in_context.xdc] for cell 'dm'
+Parsing XDC File [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/constrs_1/new/test.xdc]
+Finished Parsing XDC File [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/constrs_1/new/test.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1232.504 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2857.551 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1232.504 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.671 . Memory (MB): peak = 2857.551 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Constraint Validation : Time (s): cpu = 00:02:44 ; elapsed = 00:02:44 . Memory (MB): peak = 2857.551 ; gain = 1624.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:44 ; elapsed = 00:02:44 . Memory (MB): peak = 2857.551 ; gain = 1624.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for dm. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:44 ; elapsed = 00:02:44 . Memory (MB): peak = 2857.551 ; gain = 1624.098
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'REG_write_addr_inter_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_wirte_address_selection.v:35]
-WARNING: [Synth 8-327] inferring latch for variable 'outputR_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:67]
-WARNING: [Synth 8-327] inferring latch for variable 'sign_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:68]
-WARNING: [Synth 8-327] inferring latch for variable 'data_wr_type_inter_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/datamemory_writecontrol.v:32]
+WARNING: [Synth 8-327] inferring latch for variable 'Reg_CP0_reg[14]' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/CP0.v:68]
+WARNING: [Synth 8-327] inferring latch for variable 'Reg_CP0_reg[12]' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/CP0.v:51]
+WARNING: [Synth 8-327] inferring latch for variable 'PC_inter_present_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_fetch.v:45]
+WARNING: [Synth 8-327] inferring latch for variable 'sign_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:74]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:00 ; elapsed = 00:03:03 . Memory (MB): peak = 2857.551 ; gain = 1624.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -171,42 +141,60 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   33 Bit       Adders := 1     
 	   3 Input   33 Bit       Adders := 1     
-	   2 Input   32 Bit       Adders := 3     
+	   2 Input   32 Bit       Adders := 5     
 	   3 Input   32 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 48    
-	                8 Bit    Registers := 2     
-	                6 Bit    Registers := 6     
-	                5 Bit    Registers := 10    
-	                4 Bit    Registers := 3     
-	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
+	               32 Bit    Registers := 1077  
+	                8 Bit    Registers := 6     
+	                6 Bit    Registers := 8     
+	                5 Bit    Registers := 22    
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 8     
+	                1 Bit    Registers := 14    
 +---Multipliers : 
 	              32x32  Multipliers := 1     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 95    
 	   4 Input   32 Bit        Muxes := 17    
-	  15 Input   32 Bit        Muxes := 1     
-	   3 Input   32 Bit        Muxes := 1     
-	  12 Input   32 Bit        Muxes := 1     
+	   3 Input   32 Bit        Muxes := 31    
+	  18 Input   32 Bit        Muxes := 1     
+	  11 Input   32 Bit        Muxes := 1     
 	   2 Input   30 Bit        Muxes := 1     
-	   4 Input    8 Bit        Muxes := 2     
-	   4 Input    6 Bit        Muxes := 6     
-	   4 Input    5 Bit        Muxes := 10    
+	   7 Input    9 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 6     
+	   2 Input    8 Bit        Muxes := 29    
+	  15 Input    8 Bit        Muxes := 1     
+	  22 Input    8 Bit        Muxes := 1     
+	   9 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 2     
+	   6 Input    6 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 8     
+	   2 Input    5 Bit        Muxes := 36    
+	   4 Input    5 Bit        Muxes := 14    
 	  16 Input    5 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 2     
-	   4 Input    4 Bit        Muxes := 3     
+	   9 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
 	  18 Input    4 Bit        Muxes := 1     
-	   4 Input    3 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 1     
-	   5 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 22    
-	   4 Input    1 Bit        Muxes := 8     
+	   4 Input    3 Bit        Muxes := 9     
+	   3 Input    3 Bit        Muxes := 4     
+	  12 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 13    
+	  10 Input    3 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	  36 Input    2 Bit        Muxes := 6     
+	  12 Input    2 Bit        Muxes := 1     
+	  20 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 8     
+	   4 Input    2 Bit        Muxes := 2     
+	   8 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 99    
+	  19 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 21    
 	   3 Input    1 Bit        Muxes := 30    
 	  18 Input    1 Bit        Muxes := 2     
-	   5 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -222,6 +210,9 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:82]
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
 DSP Report: Generating DSP outputR0, operation Mode is: A*B.
 DSP Report: operator outputR0 is absorbed into DSP outputR0.
 DSP Report: operator outputR0 is absorbed into DSP outputR0.
@@ -234,8 +225,266 @@ DSP Report: operator outputR0 is absorbed into DSP outputR0.
 DSP Report: Generating DSP outputR0, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator outputR0 is absorbed into DSP outputR0.
 DSP Report: operator outputR0 is absorbed into DSP outputR0.
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[31] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[30] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[29] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[28] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[27] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[26] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[25] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[24] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[23] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[22] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[21] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[20] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[19] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[18] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[17] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB1 has port P_address[16] driven by constant 0
+WARNING: [Synth 8-7129] Port alu_flag[7] in module writeback_data_selection is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_flag[6] in module writeback_data_selection is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_flag[5] in module writeback_data_selection is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_flag[4] in module writeback_data_selection is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_flag[3] in module writeback_data_selection is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_flag[1] in module writeback_data_selection is either unconnected or has no load
+WARNING: [Synth 8-7129] Port alu_flag[0] in module writeback_data_selection is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rt[4] in module ALU_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rt[3] in module ALU_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rt[2] in module ALU_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rt[1] in module ALU_module is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr_index[25] in module Immediate_dealing is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr_index[24] in module Immediate_dealing is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Aluaebflag in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IntegerOverflowflag in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Exception_busy[7] in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Exception_busy[6] in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Exception_busy[5] in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Exception_busy[4] in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Exception_busy[3] in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Exception_busy[2] in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Exception_busy[1] in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Exception_busy[0] in module ID_Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr_index[31] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr_index[30] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr_index[29] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr_index[28] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[31] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[30] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[29] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[28] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[27] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[26] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[25] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[24] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[23] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[22] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[21] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[20] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[19] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[18] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[17] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[16] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[15] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[14] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[13] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[12] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[11] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[10] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[9] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[8] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[7] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[6] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[5] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[4] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[3] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[2] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[1] in module Instruction_fetch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port return_pc[0] in module Instruction_fetch is either unconnected or has no load
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[0][0]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[1][0]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[28][0]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][1]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[2][0]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][0]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][1]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][2]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][3]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][4]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][5]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][6]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][7]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][8]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][9]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][10]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][11]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][12]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][13]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][14]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][15]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][16]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][17]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][18]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][19]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][20]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][21]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][22]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][23]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][24]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][25]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][26]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][27]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][28]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][29]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'RF/Register_Pile_reg[0][30]' (FDE_1) to 'RF/Register_Pile_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'idexe/Imm_inter_reg[31]' (FDCE) to 'idexe/Imm_inter_reg[30]'
+INFO: [Synth 8-3886] merging instance 'idexe/Imm_inter_reg[26]' (FDCE) to 'idexe/Imm_inter_reg[27]'
+INFO: [Synth 8-3886] merging instance 'idexe/Imm_inter_reg[27]' (FDCE) to 'idexe/Imm_inter_reg[28]'
+INFO: [Synth 8-3886] merging instance 'idexe/Imm_inter_reg[28]' (FDCE) to 'idexe/Imm_inter_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (RF/\Register_Pile_reg[0][31] )
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[0][1]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[1][1]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[2][1]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[28][1]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[0][2]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (IDc/\iwt/instruction_write_reg_index_reg[1][2] )
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[2][2]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[28][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (IDc/\iwt/instruction_write_reg_index_reg[28][2] )
+INFO: [Synth 8-3886] merging instance 'IDc/state_ID_reg[7]' (FDC) to 'IDc/state_ID_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (IDc/\state_ID_reg[6] )
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][1]' (FDC) to 'cp0/Reg_CP0_reg[4][2]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][2]' (FDC) to 'cp0/Reg_CP0_reg[4][3]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][3]' (FDC) to 'cp0/Reg_CP0_reg[4][4]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][4]' (FDC) to 'cp0/Reg_CP0_reg[4][5]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][5]' (FDC) to 'cp0/Reg_CP0_reg[4][6]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][6]' (FDC) to 'cp0/Reg_CP0_reg[4][7]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][7]' (FDC) to 'cp0/Reg_CP0_reg[4][8]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][8]' (FDC) to 'cp0/Reg_CP0_reg[4][9]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][9]' (FDC) to 'cp0/Reg_CP0_reg[4][10]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][10]' (FDC) to 'cp0/Reg_CP0_reg[4][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][11]' (FDC) to 'cp0/Reg_CP0_reg[4][12]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][12]' (FDC) to 'cp0/Reg_CP0_reg[4][13]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][13]' (FDC) to 'cp0/Reg_CP0_reg[4][14]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][14]' (FDC) to 'cp0/Reg_CP0_reg[4][15]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][15]' (FDC) to 'cp0/Reg_CP0_reg[4][16]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][16]' (FDC) to 'cp0/Reg_CP0_reg[4][17]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][17]' (FDC) to 'cp0/Reg_CP0_reg[4][18]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][18]' (FDC) to 'cp0/Reg_CP0_reg[4][19]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][19]' (FDC) to 'cp0/Reg_CP0_reg[4][20]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][20]' (FDC) to 'cp0/Reg_CP0_reg[4][21]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][21]' (FDC) to 'cp0/Reg_CP0_reg[4][22]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][22]' (FDC) to 'cp0/Reg_CP0_reg[4][23]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][23]' (FDC) to 'cp0/Reg_CP0_reg[4][24]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][24]' (FDC) to 'cp0/Reg_CP0_reg[4][25]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][25]' (FDC) to 'cp0/Reg_CP0_reg[4][26]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][26]' (FDC) to 'cp0/Reg_CP0_reg[4][27]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][27]' (FDC) to 'cp0/Reg_CP0_reg[4][28]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][28]' (FDC) to 'cp0/Reg_CP0_reg[4][29]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][29]' (FDC) to 'cp0/Reg_CP0_reg[4][30]'
+INFO: [Synth 8-3886] merging instance 'cp0/Reg_CP0_reg[4][30]' (FDC) to 'cp0/Reg_CP0_reg[4][31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cp0/\Reg_CP0_reg[4][31] )
+INFO: [Synth 8-3886] merging instance 'idexe/mdata_sel_inter_reg[2]' (FDCE) to 'idexe/data_rw_ena_inter_reg[0]'
+INFO: [Synth 8-3886] merging instance 'idexe/data_rw_ena_inter_reg[0]' (FDCE) to 'idexe/data_rw_ena_inter_reg[1]'
+INFO: [Synth 8-3886] merging instance 'idexe/data_rw_ena_inter_reg[1]' (FDCE) to 'idexe/data_rw_ena_inter_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (idexe/\data_rw_ena_inter_reg[2] )
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][0]' (FD) to 'cp0/EI_entry_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][1]' (FD) to 'cp0/EI_entry_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][2]' (FD) to 'cp0/EI_entry_reg[1][3]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][3]' (FD) to 'cp0/EI_entry_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][4]' (FD) to 'cp0/EI_entry_reg[1][6]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][5]' (FD) to 'cp0/EI_entry_reg[1][7]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][6]' (FD) to 'cp0/EI_entry_reg[1][12]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][7]' (FD) to 'cp0/EI_entry_reg[1][8]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][8]' (FD) to 'cp0/EI_entry_reg[1][9]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][9]' (FD) to 'cp0/EI_entry_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][10]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (cp0/\EI_entry_reg[1][11] )
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][12]' (FD) to 'cp0/EI_entry_reg[1][13]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][13]' (FD) to 'cp0/EI_entry_reg[1][14]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][14]' (FD) to 'cp0/EI_entry_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][15]' (FD) to 'cp0/EI_entry_reg[1][16]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][16]' (FD) to 'cp0/EI_entry_reg[1][17]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][17]' (FD) to 'cp0/EI_entry_reg[1][18]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][18]' (FD) to 'cp0/EI_entry_reg[1][19]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][19]' (FD) to 'cp0/EI_entry_reg[1][20]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][20]' (FD) to 'cp0/EI_entry_reg[1][21]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][21]' (FD) to 'cp0/EI_entry_reg[1][22]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cp0/\EI_entry_reg[1][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (cp0/\Reg_CP0_reg[12][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (IDc/\state_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (IDc/\state_EXE_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (exemem/\data_rw_ena_inter_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (IDc/\state_MEM_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (IDc/\state_WB_reg[6] )
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][31]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][30]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][29]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][28]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][27]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][26]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][25]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][24]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][23]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][22]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][21]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][20]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][19]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][18]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][17]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][16]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][15]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][14]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][13]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][12]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][11]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][10]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][9]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][8]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][7]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][6]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][5]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][4]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][3]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][2]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][1]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[14][0]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][31]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][30]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][29]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][28]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][27]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][26]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][25]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][24]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][23]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][22]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][21]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][20]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][19]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][18]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][17]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][16]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][15]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][14]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][13]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][12]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][11]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][10]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][9]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][7]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][6]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][5]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (Reg_CP0_reg[12][4]) is unused and will be removed from module CP0.
+WARNING: [Synth 8-3332] Sequential element (sign_reg[7]) is unused and will be removed from module ALU_module.
+WARNING: [Synth 8-3332] Sequential element (sign_reg[6]) is unused and will be removed from module ALU_module.
+WARNING: [Synth 8-3332] Sequential element (sign_reg[5]) is unused and will be removed from module ALU_module.
+WARNING: [Synth 8-3332] Sequential element (sign_reg[4]) is unused and will be removed from module ALU_module.
+WARNING: [Synth 8-3332] Sequential element (sign_reg[3]) is unused and will be removed from module ALU_module.
+WARNING: [Synth 8-3332] Sequential element (sign_reg[2]) is unused and will be removed from module ALU_module.
+WARNING: [Synth 8-3332] Sequential element (sign_reg[1]) is unused and will be removed from module ALU_module.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:26 ; elapsed = 00:03:33 . Memory (MB): peak = 2857.551 ; gain = 1624.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -259,19 +508,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:36 ; elapsed = 00:03:43 . Memory (MB): peak = 2857.551 ; gain = 1624.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Timing Optimization : Time (s): cpu = 00:04:04 ; elapsed = 00:04:11 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Technology Mapping : Time (s): cpu = 00:04:06 ; elapsed = 00:04:38 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -285,93 +534,99 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4649] Removing BlackBox instance ic of module IO_cache having unconnected or no output ports
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished IO Insertion : Time (s): cpu = 00:04:11 ; elapsed = 00:04:43 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:11 ; elapsed = 00:04:43 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:12 ; elapsed = 00:04:45 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:12 ; elapsed = 00:04:45 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:12 ; elapsed = 00:04:45 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:12 ; elapsed = 00:04:45 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+--------------+----------+
-|      |BlackBox name |Instances |
-+------+--------------+----------+
-|1     |DataMemory    |         1|
-+------+--------------+----------+
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----------+------+
-|      |Cell       |Count |
-+------+-----------+------+
-|1     |DataMemory |     1|
-|2     |BUFG       |     1|
-|3     |CARRY4     |    16|
-|4     |LUT1       |     3|
-|5     |LUT2       |     1|
-|6     |LUT5       |     3|
-|7     |FDCE       |    30|
-|8     |FDRE       |    39|
-|9     |LD         |     1|
-|10    |IBUF       |     4|
-|11    |OBUF       |   138|
-|12    |OBUFT      |     4|
-+------+-----------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    50|
+|3     |LUT1   |     4|
+|4     |LUT2   |   403|
+|5     |LUT3   |   135|
+|6     |LUT4   |   167|
+|7     |LUT5   |   347|
+|8     |LUT6   |  2927|
+|9     |MUXF7  |  1121|
+|10    |MUXF8  |   544|
+|11    |FDCE   |   440|
+|12    |FDPE   |  8208|
+|13    |FDRE   |   224|
+|14    |LD     |     1|
+|15    |LDC    |    40|
+|16    |IBUF   |    19|
+|17    |OBUF   |    64|
++------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:12 ; elapsed = 00:04:45 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1232.504 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1232.504 ; gain = 1.762
+Synthesis finished with 0 errors, 0 critical warnings and 146 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:33 ; elapsed = 00:04:33 . Memory (MB): peak = 3157.520 ; gain = 1924.066
+Synthesis Optimization Complete : Time (s): cpu = 00:04:12 ; elapsed = 00:04:46 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1232.504 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.158 . Memory (MB): peak = 3157.520 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1756 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'MIPS_CPU_TOP' is not ideal for floorplanning, since the cellview 'DataMemoryFile' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1232.504 ; gain = 0.000
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 32 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 3157.520 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 1 instances were transformed.
+  A total of 41 instances were transformed.
   LD => LDCE: 1 instance 
+  LDC => LDCE: 8 instances
+  LDC => LDCE (inverted pins: G): 32 instances
 
-Synth Design complete, checksum: 4d0bfd05
+Synth Design complete, checksum: 37a38ad4
 INFO: [Common 17-83] Releasing license: Synthesis
-68 Infos, 44 Warnings, 0 Critical Warnings and 0 Errors encountered.
+193 Infos, 151 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1232.504 ; gain = 1.762
+synth_design: Time (s): cpu = 00:04:18 ; elapsed = 00:04:52 . Memory (MB): peak = 3157.520 ; gain = 1924.066
 INFO: [Common 17-1381] The checkpoint 'D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/MIPS_CPU_TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MIPS_CPU_TOP_utilization_synth.rpt -pb MIPS_CPU_TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Mar 18 21:03:20 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 30 22:01:32 2022...

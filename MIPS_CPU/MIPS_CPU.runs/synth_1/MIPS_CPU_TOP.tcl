@@ -70,20 +70,16 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 4
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tfgg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.cache/wt [current_project]
 set_property parent.project_path D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.xpr [current_project]
-set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.cache/ip [current_project]
@@ -95,10 +91,14 @@ read_verilog -library xil_defaultlib {
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_Flag_Handler.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_input_selection.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v
+  D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/CP0.v
+  D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMem_dataselection.v
+  D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMemoryFile.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Datamemory_addr_translater.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXCEPTION_Handler.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_registers.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/EXE_MEM_var_convert.v
+  D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_registers.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_EXE_var_convert.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IF_ID_registers.v
@@ -107,18 +107,15 @@ read_verilog -library xil_defaultlib {
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/InstructionMemory.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_fetch.v
+  D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_write_table.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_registers.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_var_converter.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/PC_next_4.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_File.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_wirte_address_selection.v
-  D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/datamemory_writecontrol.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v
   D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v
 }
-read_ip -quiet D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/ip/DataMemory/DataMemory.xci
-set_property used_in_implementation false [get_files -all d:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.gen/sources_1/ip/DataMemory/DataMemory_ooc.xdc]
-
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -128,6 +125,9 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/constrs_1/new/test.xdc
+set_property used_in_implementation false [get_files D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/constrs_1/new/test.xdc]
+
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

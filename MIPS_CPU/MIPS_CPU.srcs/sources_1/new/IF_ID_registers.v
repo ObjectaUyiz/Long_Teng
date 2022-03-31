@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 module IF_ID_registers(
     input clk,
+    input areset,
     input [1:0] pipeline_control,
     input [31:0] Instruction_in,
     input [31:0] PC_next_in,
@@ -9,19 +10,26 @@ module IF_ID_registers(
 );
 
 reg [31:0] Instruction,PC_next;
-reg [31:0] empty;
+wire [31:0] empty;
 
-always@(posedge clk)begin
+assign empty = 0;
+
+always@(posedge clk or posedge areset)begin
+    if(areset) begin Instruction <= 0;PC_next <= 0;end
+    else begin
     case(pipeline_control)
-        2'b01:begin Instruction <= empty;PC_next<= empty;end 
+        2'b01:begin Instruction <= empty;PC_next <= PC_next;end 
         2'b00:begin Instruction <= Instruction_in;
                     PC_next <= PC_next_in;
                     end 
         2'b10:begin Instruction <= Instruction;
                     PC_next <= PC_next;
                     end 
-        default:;
+        default:begin Instruction <= Instruction;
+                    PC_next <= PC_next;
+                    end 
     endcase
+    end
 end
 
 assign IF_Instruction_ID = Instruction;

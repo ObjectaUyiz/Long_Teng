@@ -22,6 +22,7 @@
 
 module Register_File(
     input clk,
+    input areset,
     input wirte_ena,
     input [4:0] RAddr_A,
     input [4:0] RAddr_B,
@@ -31,6 +32,12 @@ module Register_File(
     output reg [31:0] RData_B
     );
     reg [31:0] Register_Pile[0:31];
+    integer i;
+    initial begin
+        for(i=0;i<32;i=i+1)begin
+            Register_Pile[i] <= 0;
+        end
+    end
 
     always@(*) begin
         RData_A <= Register_Pile[RAddr_A];
@@ -38,7 +45,8 @@ module Register_File(
     end
 
     always@(negedge clk) begin
-        if(wirte_ena)begin
+        if(areset) $readmemh("REGfile_init.list", Register_Pile);
+        else if(wirte_ena)begin
         case(WAddr_C)
             0: Register_Pile[0] <= 0;
             default: Register_Pile[WAddr_C] <= WData_C;

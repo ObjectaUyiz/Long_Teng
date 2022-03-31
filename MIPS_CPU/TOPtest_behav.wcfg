@@ -12,60 +12,66 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="50.001 ns"></ZoomEndTime>
-      <Cursor1Time time="50.000 ns"></Cursor1Time>
+      <ZoomEndTime time="158.320 ns"></ZoomEndTime>
+      <Cursor1Time time="21.850 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="272"></NameColumnWidth>
-      <ValueColumnWidth column_width="121"></ValueColumnWidth>
+      <NameColumnWidth column_width="124"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="12" />
-   <wvobject fp_name="/TOPtest/top/clk" type="logic">
+   <wvobject fp_name="/TOPtest/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TOPtest/top/If/PC_inter_next" type="array">
-      <obj_property name="ElementShortName">PC_inter_next[31:0]</obj_property>
-      <obj_property name="ObjectShortName">PC_inter_next[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/TOPtest/top/If/PC" type="array">
       <obj_property name="ElementShortName">PC[31:0]</obj_property>
       <obj_property name="ObjectShortName">PC[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TOPtest/top/If/PC_next" type="array">
-      <obj_property name="ElementShortName">PC_next[31:0]</obj_property>
-      <obj_property name="ObjectShortName">PC_next[31:0]</obj_property>
+   <wvobject fp_name="/TOPtest/top/IM/InstAddr" type="array">
+      <obj_property name="ElementShortName">InstAddr[11:2]</obj_property>
+      <obj_property name="ObjectShortName">InstAddr[11:2]</obj_property>
    </wvobject>
-   <wvobject fp_name="/TOPtest/top/If/PC_inter" type="array">
-      <obj_property name="ElementShortName">PC_inter[31:0]</obj_property>
-      <obj_property name="ObjectShortName">PC_inter[31:0]</obj_property>
+   <wvobject fp_name="/TOPtest/top/IM/Instruction" type="array">
+      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/TOPtest/top/ifid/IF_PC_next_ID" type="array">
-      <obj_property name="ElementShortName">IF_PC_next_ID[31:0]</obj_property>
-      <obj_property name="ObjectShortName">IF_PC_next_ID[31:0]</obj_property>
+   <wvobject fp_name="/TOPtest/top/IDc/state_IF" type="array">
+      <obj_property name="ElementShortName">state_IF[7:0]</obj_property>
+      <obj_property name="ObjectShortName">state_IF[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TOPtest/top/ifid/IF_Instruction_ID" type="array">
       <obj_property name="ElementShortName">IF_Instruction_ID[31:0]</obj_property>
       <obj_property name="ObjectShortName">IF_Instruction_ID[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/TOPtest/top/Instruction_ID" type="array">
-      <obj_property name="ElementShortName">Instruction_ID[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Instruction_ID[31:0]</obj_property>
+   <wvobject fp_name="/TOPtest/top/ifid/IF_PC_next_ID" type="array">
+      <obj_property name="ElementShortName">IF_PC_next_ID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IF_PC_next_ID[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/TOPtest/top/set_EXE" type="array">
-      <obj_property name="ElementShortName">set_EXE[25:0]</obj_property>
-      <obj_property name="ObjectShortName">set_EXE[25:0]</obj_property>
+   <wvobject fp_name="/TOPtest/top/IDc/state_ID" type="array">
+      <obj_property name="ElementShortName">state_ID[7:0]</obj_property>
+      <obj_property name="ObjectShortName">state_ID[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TOPtest/top/set_MEM" type="array">
-      <obj_property name="ElementShortName">set_MEM[25:0]</obj_property>
-      <obj_property name="ObjectShortName">set_MEM[25:0]</obj_property>
+   <wvobject fp_name="/TOPtest/top/IDc/state_EXE" type="array">
+      <obj_property name="ElementShortName">state_EXE[7:0]</obj_property>
+      <obj_property name="ObjectShortName">state_EXE[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TOPtest/top/set_WB" type="array">
-      <obj_property name="ElementShortName">set_WB[25:0]</obj_property>
-      <obj_property name="ObjectShortName">set_WB[25:0]</obj_property>
+   <wvobject fp_name="/TOPtest/top/IDc/state_MEM" type="array">
+      <obj_property name="ElementShortName">state_MEM[7:0]</obj_property>
+      <obj_property name="ObjectShortName">state_MEM[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TOPtest/top/Pc_add4" type="array">
-      <obj_property name="ElementShortName">Pc_add4[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Pc_add4[31:0]</obj_property>
+   <wvobject fp_name="/TOPtest/top/IDc/state_WB" type="array">
+      <obj_property name="ElementShortName">state_WB[7:0]</obj_property>
+      <obj_property name="ObjectShortName">state_WB[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOPtest/top/IDc/EXL_status" type="logic">
+      <obj_property name="ElementShortName">EXL_status</obj_property>
+      <obj_property name="ObjectShortName">EXL_status</obj_property>
    </wvobject>
 </wave_config>

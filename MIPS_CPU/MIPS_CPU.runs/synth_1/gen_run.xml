@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tfgg484-1" LaunchTime="1647608566">
+<GenRun Id="synth_1" LaunchPart="xc7a35tfgg484-1" LaunchTime="1648648588">
   <File Type="PA-TCL" Name="MIPS_CPU_TOP.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="MIPS_CPU_TOP_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="MIPS_CPU_TOP_reports.tcl"/>
   <File Type="RDS-RDS" Name="MIPS_CPU_TOP.vds"/>
   <File Type="RDS-UTIL" Name="MIPS_CPU_TOP_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="MIPS_CPU_TOP_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="MIPS_CPU_TOP.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="MIPS_CPU_TOP_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="MIPS_CPU_TOP_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ALU_Flag_Handler.v">
@@ -26,6 +23,27 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/ALU_module.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/CP0.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DataMem_dataselection.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DataMemoryFile.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -54,6 +72,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/EXE_MEM_var_convert.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ID_Controller.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -116,6 +141,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Instruction_write_table.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/MEM_WB_registers.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -145,13 +177,6 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/Register_wirte_address_selection.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/datamemory_writecontrol.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -188,14 +213,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ID_Controller.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/designtest.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -218,7 +235,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/test.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/test.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -232,5 +256,4 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="DataMemory"/>
 </GenRun>

@@ -28,7 +28,7 @@ module Register_wirte_address_selection(
     output [4:0] REG_write_addr
     );
 
-    reg REG_write_addr_inter;
+    reg [4:0] REG_write_addr_inter;
 
     always@(*)begin
         case(sel_REG_w)

@@ -25,43 +25,41 @@ module Instruction_fetch(
     input areset,
     input ena,
     input emptyena,
-    input [1:0] I_sel,
+    input [2:0] I_sel,
     input [31:0] target_offset,
-    input [25:0] instr_index,
-    input [31:0] rs,
+    input [31:0] instr_index,
+    input [31:0] REGrs,
+    input [31:0] EI_event_entry,
+    input [31:0] return_pc,
     output [31:0] PC,
     output [31:0] PC_next
     );
-    reg [31:0] PC_inter,PC_inter_next,PC_temp;
-    reg [31:0] PC_control,PC_next_control;
+    reg [31:0] PC_inter,PC_inter_next,temp_reg;
     reg [31:0] empty;
-    reg [1:0] counter;
-    // initial begin
-    //     PC_inter_next = 0;
-    // end
+
+    reg [31:0] PC_temp,PC_inter_present;
+
+    
 
     always@(*)begin
-        PC_temp = PC_inter_next + 4;
+        PC_temp = areset?0:ena?PC_inter_present:PC_inter_next + 4;
+        PC_inter_present = areset?0:ena?PC_inter_present:PC_inter_next;
         case(I_sel)
-        2'b00: PC_inter = PC_temp;
-        2'b01: PC_inter = target_offset + PC_next;
-        2'b10: PC_inter = {PC_temp[31:28],instr_index<<2};
-        2'b11: PC_inter = rs;
+        3'b000: PC_inter = PC_temp;
+        3'b001: PC_inter = target_offset + PC_next;
+        3'b010: PC_inter = {PC_temp[31:28],instr_index[27:0]};
+        3'b011: PC_inter = REGrs;
+        3'b100: PC_inter = EI_event_entry;
+        3'b101: PC_inter = 32'h00400020;
+        default: PC_inter = 0;
         endcase
     end
 
     always@(posedge clk or posedge areset)begin
         if(areset) PC_inter_next <= 0;
         else begin
-        case(ena)
-        1'b0: PC_inter_next <= PC_inter;
-        1'b1: PC_inter_next <= PC_inter_next;
-        endcase
+        PC_inter_next <= PC_inter;
         end
-    end
-
-    always@(posedge clk)begin
-        counter <= (counter==0)?1:counter-1;
     end
 
     assign PC = emptyena?empty:PC_inter_next;
