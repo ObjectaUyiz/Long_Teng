@@ -19,6 +19,10 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+//SYSCALL
+//opcode indicate this is a SYSCALL 
+//rs indecate which register this instruction want to output
+//fun indicate the function number
 
 module InstructionDecoder(
     input [31:0] Instruction,

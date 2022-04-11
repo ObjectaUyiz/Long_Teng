@@ -50,7 +50,9 @@ module ID_Controller(
     output clear,
     output [1:0] Sel_WB_data_out,
     output [2:0] Mem_wmdata_sel,
-    output [5:0] Memory_Data_rw_ena
+    output [5:0] Memory_Data_rw_ena,
+    output InteruptEna,
+    output syscall_table_ena
     );
     //异常类型：溢出，中断，系统调用？，地址错，异常指令保留
     parameter   ERROR=0,EMPTY_INSTRUCTION=38,ADD=1,ADDI=2,ADDU=3,ADDIU=4,SUB=5,SLT=6,MUL=7,AND=8,ANDI=9,LUI=10,
@@ -62,14 +64,16 @@ module ID_Controller(
     parameter   A=0,exe=0,B=1,mem=1,C=2,wb=2,D=3,E=4,F=5,G=6,H=7,I=8,K=9,L=10,M=11,N=12,O=13,P=14,E_I=15;
     parameter [34:0] write_map = {2'b00,3'b111,1'b0,1'b1,7'b0000000,20'b11111111111111111111,1'b0};//有哪些指令需要写寄存器
     
+    reg InteruptEna_inter,syscall_table_ena_inter;
     wire [2:0] writereg_index_EXE,writereg_index_MEM,writereg_index_WB; 
     wire [2:0] writereg_type_EXE,writereg_type_MEM,writereg_type_WB;
     reg [127:0] conflict_map;//维护一张表，其中包含5个阶段中的各个指令的位置，当最后一个阶段结束后自动回0
+    reg [31:0] SYSCALL_instruction;
     reg [7:0] state,state_next,sel_state,sel_state_EI;
     reg [7:0] state_IF,state_ID,state_EXE,state_MEM,state_WB,state_conflict;
     reg [1:0] IF_Pipeline_ID_inter,ID_Pipeline_EXE_inter,EXE_Pipeline_MEM_inter,MEM_Pipeline_WB_inter;
-    reg [5:0] opcode,fun;
-    reg [4:0] rs,rt,rd,sa,rs_id,rt_id,rd_id,rs_exe,rt_exe,rd_exe,rs_mem,rt_mem,rd_mem,rs_wb,rt_wb,rd_wb,conf_reg_exe,conf_reg_mem,conf_reg_wb;
+    reg [5:0] opcode,fun,fun_id,fun_exe,fun_mem,fun_wb;
+    reg [4:0] rs,rt,rd,sa,sa_id,sa_exe,sa_mem,sa_wb,rs_id,rt_id,rd_id,rs_exe,rt_exe,rd_exe,rs_mem,rt_mem,rd_mem,rs_wb,rt_wb,rd_wb,conf_reg_exe,conf_reg_mem,conf_reg_wb;
     //IF stage selecter
     reg [2:0] Sel_PC_inter;
     reg Ifena_inter;
@@ -127,7 +131,7 @@ module ID_Controller(
             6'b100011: state_IF = LW;
             6'b101000: state_IF = SB;
             6'b101011: state_IF = SW;
-            6'b011111: state_IF = SYSCALL;
+            6'b011111: state_IF = SYSCALL; 
             6'b010000: state_IF = (fun==6'b011000)?ERET:ERROR;
             default:state_IF = EMPTY_INSTRUCTION;
         endcase
@@ -153,6 +157,16 @@ module ID_Controller(
             endcase
     end
 
+    always @(*) begin
+        if(areset) InteruptEna_inter = 1;
+        else begin
+            case(state)
+            A: InteruptEna_inter = 1;
+            default: InteruptEna_inter = 0;
+            endcase
+        end
+    end
+
     always@(*)begin
         case(state)
         A,N:{Ifena_inter,IF_Pipeline_ID_inter,ID_Pipeline_EXE_inter,EXE_Pipeline_MEM_inter,MEM_Pipeline_WB_inter} <= 0;
@@ -164,7 +178,7 @@ module ID_Controller(
 
     always@(*) begin
         case(state_IF)
-        JR,J,JAL,JALR,BEQ,BNE,BGEZ,BGTZ,BLEZ,BLTZ,ERET: sel_state = B;
+        JR,J,JAL,JALR,BEQ,BNE,BGEZ,BGTZ,BLEZ,BLTZ,ERET,SYSCALL: sel_state = B;
         default: sel_state = A;
         endcase
     end
@@ -206,7 +220,7 @@ module ID_Controller(
                                 (rs_id==conf_reg_wb)?3'b000:3'b000;
                 Sel_alub_inter=3'b001;end
             LUI:begin Sel_alua_inter=3'b010;Sel_alub_inter=3'b010;end
-            BGEZ,BGTZ,BLEZ,BLTZ:begin 
+            BGEZ,BGTZ,BLEZ,BLTZ,SYSCALL:begin 
                 Sel_alua_inter=(rs_id==0)?3'b000:(rs_id==conf_reg_exe)?(writereg_type_EXE[0])?3'b110:3'b100:
                                 (rs_id==conf_reg_mem)?(writereg_type_MEM[0])?3'b101:3'b100:
                                 (rs_id==conf_reg_wb)?3'b000:3'b000;
@@ -232,6 +246,12 @@ module ID_Controller(
         end
     end
 
+    //写MEMORY可能的数据来源为某个寄存器的值，而寄存器的值的来源为ALU，或者来源于LB和LW取出的数据，
+    //故对SBSW的数据冲突可能为目前在EXE，MEM，WB阶段的回写数据，而回写的数据总是被选择进入WBsel,
+    //而当SBSW指令进行到MEM阶段时，前三者必然可以通过WB阶段的选择器获得，从而不需要判断前阶段指令
+    //的写数据来源是alu还是mem的取（当前非LBLW的写指令必定经过ALU），而仅需要判断是否当前读的
+    //寄存器被前三条指令中的最近的写指令冲突，从而简化流程，不再需要集中收容三个阶段的ALU数据以及三个阶段从MEM中传出的数据
+
     always @(*) begin
         if(areset) begin
             Mem_wmdata_sel_inter = 0;
@@ -242,6 +262,13 @@ module ID_Controller(
             default:Mem_wmdata_sel_inter = 0;
             endcase
         end
+    end
+
+    always @(*) begin
+        case(state_ID)
+        SYSCALL: syscall_table_ena_inter = 1;
+        default: syscall_table_ena_inter = 0;
+        endcase
     end
 
     always @(*) begin
@@ -420,14 +447,14 @@ module ID_Controller(
 /////////////////////////////////////////////control////////////////////////////////////
 
 always @(posedge clk or posedge areset) begin
-    if(areset) {rs_id,rt_id,rd_id,rs_exe,rt_exe,rd_exe,rs_mem,rt_mem,rd_mem,rs_wb,rt_wb,rd_wb} <= 0;
+    if(areset) {rs_id,rt_id,rd_id,rs_exe,rt_exe,rd_exe,rs_mem,rt_mem,rd_mem,rs_wb,rt_wb,rd_wb,fun_id,fun_exe,fun_mem,fun_wb,sa_id,sa_exe,sa_mem,sa_wb} <= 0;
     else begin
         case(state)
         L,M:begin
-            {rs_id,rt_id,rd_id} <= 0;
-            {rs_exe,rt_exe,rd_exe} <= 0;
-            {rs_mem,rt_mem,rd_mem} <= 0;
-            {rs_wb,rt_wb,rd_wb} <= 0;
+            {rs_id,rt_id,rd_id,sa_id,fun_id} <= 0;
+            {rs_exe,rt_exe,rd_exe,sa_exe,fun_exe} <= 0;
+            {rs_mem,rt_mem,rd_mem,sa_mem,fun_mem} <= 0;
+            {rs_wb,rt_wb,rd_wb,sa_wb,fun_wb} <= 0;
         end
         default:begin
         {rs_id,rt_id,rd_id} <= {rs,rt,rd};
@@ -498,6 +525,7 @@ end
     assign Mem_wmdata_sel = Mem_wmdata_sel_inter;
     assign Memory_Data_rw_ena = Memory_Data_rw_ena_inter;
     assign clear = clear_inter;
-
+    assign InteruptEna = InteruptEna_inter;
+    assign syscall_table_ena = syscall_table_ena_inter;
 
 endmodule

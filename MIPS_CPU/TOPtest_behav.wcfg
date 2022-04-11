@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="158.320 ns"></ZoomEndTime>
-      <Cursor1Time time="21.850 ns"></Cursor1Time>
+      <ZoomStartTime time="80.751 ns"></ZoomStartTime>
+      <ZoomEndTime time="231.573 ns"></ZoomEndTime>
+      <Cursor1Time time="151.291 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="124"></NameColumnWidth>
-      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+      <NameColumnWidth column_width="274"></NameColumnWidth>
+      <ValueColumnWidth column_width="130"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="15" />
    <wvobject fp_name="/TOPtest/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -41,6 +41,14 @@
       <obj_property name="ElementShortName">state_IF[7:0]</obj_property>
       <obj_property name="ObjectShortName">state_IF[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOPtest/top/IDc/state" type="array">
+      <obj_property name="ElementShortName">state[7:0]</obj_property>
+      <obj_property name="ObjectShortName">state[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOPtest/top/IDc/state_next" type="array">
+      <obj_property name="ElementShortName">state_next[7:0]</obj_property>
+      <obj_property name="ObjectShortName">state_next[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/TOPtest/top/ifid/IF_Instruction_ID" type="array">
       <obj_property name="ElementShortName">IF_Instruction_ID[31:0]</obj_property>
@@ -73,5 +81,9 @@
    <wvobject fp_name="/TOPtest/top/IDc/EXL_status" type="logic">
       <obj_property name="ElementShortName">EXL_status</obj_property>
       <obj_property name="ObjectShortName">EXL_status</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOPtest/top/cp0/return_pc_addr" type="array">
+      <obj_property name="ElementShortName">return_pc_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">return_pc_addr[31:0]</obj_property>
    </wvobject>
 </wave_config>

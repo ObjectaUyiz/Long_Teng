@@ -16,7 +16,7 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+// Status 状态寄存器，EPC上次异常时的程序计数器，Cause寄存器目前用来保存外部中断的原因，count寄存器用来计量到目前为止程序经过的时钟数
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -81,7 +81,7 @@ module CP0(
         end
     end
 
-    assign return_pc_addr = Reg_CP0[EPC]-4;
+    assign return_pc_addr = Reg_CP0[EPC];//EPC寄存器保存到的数据为当前异常指令的地址，异常结束后跳转到下一条指令继续执行
     assign Exception_busy_type = Reg_CP0[Status][7:0];
     assign EXL_status = Reg_CP0[Status][EXL];
     assign EI_entry_addr = (Reg_CP0[Cause]==0)?EI_entry[Reg_CP0[Status][7:0]]:EI_entry[Reg_CP0[Cause]+5];

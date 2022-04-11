@@ -16,7 +16,7 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+// SYSCALL 6'b011111, 5'b00000, 5'b00000,,5'b00000, 5'b00001, 6'b000000
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -50,16 +50,17 @@ module InstructionMemory(
         InstMem[4] = 32'h00021400;
         InstMem[5] = 32'h34420001;
         InstMem[6] = 32'h34030000;
-        InstMem[7] = 32'h00411820;
-        InstMem[8] = 32'h34018000;
-        InstMem[9] = 32'h00000000;
+        InstMem[7] = 32'h00411821;
+        InstMem[8] = 32'h34030000;
+        InstMem[9] = 32'h00411820;
         InstMem[10] = 32'h00000000;
         InstMem[11] = 32'h00000000;
         InstMem[12] = 32'h00000000;
         InstMem[13] = 32'h00000000;
         InstMem[14] = 32'h00000000;
         InstMem[500] = 32'h080003e8;//j to 1000
-        InstMem[1000] = 32'h42000018;
+        InstMem[1000] = 32'h7C000040;
+        InstMem[1001] = 32'h42000018;
     end
     
     assign Instruction = areset?InstMem[0]:InstMem[InstAddr];

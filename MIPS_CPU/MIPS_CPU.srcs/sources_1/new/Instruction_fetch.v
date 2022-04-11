@@ -50,7 +50,7 @@ module Instruction_fetch(
         3'b010: PC_inter = {PC_temp[31:28],instr_index[27:0]};
         3'b011: PC_inter = REGrs;
         3'b100: PC_inter = EI_event_entry;
-        3'b101: PC_inter = 32'h00400020;
+        3'b101: PC_inter = return_pc;
         default: PC_inter = 0;
         endcase
     end

@@ -17,9 +17,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tfgg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 13052
+INFO: [Synth 8-7075] Helper process launched with PID 1840
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1233.453 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1232.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'MIPS_CPU_TOP' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ID_Controller' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v:23]
@@ -27,7 +27,8 @@ INFO: [Synth 8-6157] synthesizing module 'Instruction_write_table' [D:/Long_Teng
 INFO: [Synth 8-6155] done synthesizing module 'Instruction_write_table' (1#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_write_table.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'ID_Controller' (2#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ID_Controller.v:23]
 WARNING: [Synth 8-7071] port 'Sel_WB_data_out' of module 'ID_Controller' is unconnected for instance 'IDc' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:93]
-WARNING: [Synth 8-7023] instance 'IDc' of module 'ID_Controller' has 30 connections declared, but only 29 given [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:93]
+WARNING: [Synth 8-7071] port 'InteruptEna' of module 'ID_Controller' is unconnected for instance 'IDc' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:93]
+WARNING: [Synth 8-7023] instance 'IDc' of module 'ID_Controller' has 31 connections declared, but only 29 given [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:93]
 INFO: [Synth 8-6157] synthesizing module 'CP0' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/CP0.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'CP0' (3#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/CP0.v:23]
 WARNING: [Synth 8-7071] port 'time_clock' of module 'CP0' is unconnected for instance 'cp0' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:97]
@@ -38,8 +39,8 @@ INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [D:/Long_Teng/Long_
 INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (5#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/InstructionMemory.v:23]
 INFO: [Synth 8-6157] synthesizing module 'IF_ID_registers' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IF_ID_registers.v:2]
 INFO: [Synth 8-6155] done synthesizing module 'IF_ID_registers' (6#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IF_ID_registers.v:2]
-INFO: [Synth 8-6157] synthesizing module 'InstructionDecoder' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'InstructionDecoder' (7#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v:23]
+INFO: [Synth 8-6157] synthesizing module 'InstructionDecoder' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionDecoder' (7#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_Decode.v:27]
 INFO: [Synth 8-6157] synthesizing module 'PC_next_add4' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/PC_next_4.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'PC_next_add4' (8#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/PC_next_4.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Register_wirte_address_selection' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Register_wirte_address_selection.v:23]
@@ -75,7 +76,7 @@ INFO: [Synth 8-6155] done synthesizing module 'DataMem_dataselection' (21#1) [D:
 INFO: [Synth 8-6157] synthesizing module 'IO_cache' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IO_cache.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'IO_cache' (22#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/IO_cache.v:23]
 INFO: [Synth 8-6157] synthesizing module 'DataMemoryFile' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMemoryFile.v:23]
-INFO: [Synth 8-226] default block is never used [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMemoryFile.v:55]
+INFO: [Synth 8-226] default block is never used [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMemoryFile.v:56]
 INFO: [Synth 8-6155] done synthesizing module 'DataMemoryFile' (23#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/DataMemoryFile.v:23]
 INFO: [Synth 8-6157] synthesizing module 'MEM_WB_var_converter' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_var_converter.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_var_converter' (24#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MEM_WB_var_converter.v:23]
@@ -86,18 +87,18 @@ INFO: [Synth 8-6157] synthesizing module 'writeback_data_selection' [D:/Long_Ten
 INFO: [Synth 8-6155] done synthesizing module 'writeback_data_selection' (26#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/writeback_data_selection.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'MIPS_CPU_TOP' (27#1) [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/MIPS_CPU_TOP.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:02:20 ; elapsed = 00:02:21 . Memory (MB): peak = 2857.551 ; gain = 1624.098
+Finished RTL Elaboration : Time (s): cpu = 00:02:56 ; elapsed = 00:02:57 . Memory (MB): peak = 2739.137 ; gain = 1506.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:24 ; elapsed = 00:02:25 . Memory (MB): peak = 2857.551 ; gain = 1624.098
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:59 ; elapsed = 00:03:01 . Memory (MB): peak = 2739.137 ; gain = 1506.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:24 ; elapsed = 00:02:25 . Memory (MB): peak = 2857.551 ; gain = 1624.098
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:59 ; elapsed = 00:03:01 . Memory (MB): peak = 2739.137 ; gain = 1506.301
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2857.551 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2739.137 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -106,27 +107,27 @@ Parsing XDC File [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/constrs_1/new/te
 Finished Parsing XDC File [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/constrs_1/new/test.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2857.551 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2739.137 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.671 . Memory (MB): peak = 2857.551 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.656 . Memory (MB): peak = 2739.137 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:02:44 ; elapsed = 00:02:44 . Memory (MB): peak = 2857.551 ; gain = 1624.098
+Finished Constraint Validation : Time (s): cpu = 00:03:19 ; elapsed = 00:03:20 . Memory (MB): peak = 2739.137 ; gain = 1506.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:02:44 ; elapsed = 00:02:44 . Memory (MB): peak = 2857.551 ; gain = 1624.098
+Finished Loading Part and Timing Information : Time (s): cpu = 00:03:19 ; elapsed = 00:03:20 . Memory (MB): peak = 2739.137 ; gain = 1506.301
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'Reg_CP0_reg[14]' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/CP0.v:68]
 WARNING: [Synth 8-327] inferring latch for variable 'Reg_CP0_reg[12]' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/CP0.v:51]
 WARNING: [Synth 8-327] inferring latch for variable 'PC_inter_present_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/Instruction_fetch.v:45]
 WARNING: [Synth 8-327] inferring latch for variable 'sign_reg' [D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.srcs/sources_1/new/ALU_module.v:74]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:00 ; elapsed = 00:03:03 . Memory (MB): peak = 2857.551 ; gain = 1624.098
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:41 ; elapsed = 00:03:45 . Memory (MB): peak = 2739.137 ; gain = 1506.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -140,7 +141,7 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 1077  
+	               32 Bit    Registers := 1078  
 	                8 Bit    Registers := 6     
 	                6 Bit    Registers := 8     
 	                5 Bit    Registers := 22    
@@ -161,7 +162,6 @@ Detailed RTL Component Info :
 	   2 Input    8 Bit        Muxes := 29    
 	  15 Input    8 Bit        Muxes := 1     
 	  22 Input    8 Bit        Muxes := 1     
-	   9 Input    8 Bit        Muxes := 1     
 	   2 Input    7 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 2     
 	   6 Input    6 Bit        Muxes := 1     
@@ -184,10 +184,10 @@ Detailed RTL Component Info :
 	   2 Input    2 Bit        Muxes := 8     
 	   4 Input    2 Bit        Muxes := 2     
 	   8 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 99    
+	   3 Input    1 Bit        Muxes := 1055  
+	   2 Input    1 Bit        Muxes := 1123  
 	  19 Input    1 Bit        Muxes := 1     
 	   4 Input    1 Bit        Muxes := 21    
-	   3 Input    1 Bit        Muxes := 30    
 	  18 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -380,30 +380,30 @@ INFO: [Synth 8-3886] merging instance 'idexe/mdata_sel_inter_reg[2]' (FDCE) to '
 INFO: [Synth 8-3886] merging instance 'idexe/data_rw_ena_inter_reg[0]' (FDCE) to 'idexe/data_rw_ena_inter_reg[1]'
 INFO: [Synth 8-3886] merging instance 'idexe/data_rw_ena_inter_reg[1]' (FDCE) to 'idexe/data_rw_ena_inter_reg[2]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (idexe/\data_rw_ena_inter_reg[2] )
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][0]' (FD) to 'cp0/EI_entry_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][1]' (FD) to 'cp0/EI_entry_reg[1][2]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][2]' (FD) to 'cp0/EI_entry_reg[1][3]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][3]' (FD) to 'cp0/EI_entry_reg[1][4]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][4]' (FD) to 'cp0/EI_entry_reg[1][6]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][5]' (FD) to 'cp0/EI_entry_reg[1][7]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][6]' (FD) to 'cp0/EI_entry_reg[1][12]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][7]' (FD) to 'cp0/EI_entry_reg[1][8]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][8]' (FD) to 'cp0/EI_entry_reg[1][9]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][9]' (FD) to 'cp0/EI_entry_reg[1][10]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][10]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][0]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][0]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][1]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][1]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][2]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][2]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][3]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][3]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][4]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][4]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][5]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][5]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][6]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][6]' (FD) to 'cp0/EI_entry_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][7]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][7]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][8]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][8]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][9]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][9]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[2][10]' (FD) to 'cp0/EI_entry_reg[1][11]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (cp0/\EI_entry_reg[1][11] )
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][12]' (FD) to 'cp0/EI_entry_reg[1][13]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][13]' (FD) to 'cp0/EI_entry_reg[1][14]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][14]' (FD) to 'cp0/EI_entry_reg[1][15]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][15]' (FD) to 'cp0/EI_entry_reg[1][16]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][16]' (FD) to 'cp0/EI_entry_reg[1][17]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][17]' (FD) to 'cp0/EI_entry_reg[1][18]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][18]' (FD) to 'cp0/EI_entry_reg[1][19]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][19]' (FD) to 'cp0/EI_entry_reg[1][20]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][20]' (FD) to 'cp0/EI_entry_reg[1][21]'
-INFO: [Synth 8-3886] merging instance 'cp0/EI_entry_reg[1][21]' (FD) to 'cp0/EI_entry_reg[1][22]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (cp0/\EI_entry_reg[1][31] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (cp0/\Reg_CP0_reg[12][4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (IDc/\state_reg[4] )
@@ -478,7 +478,7 @@ WARNING: [Synth 8-3332] Sequential element (sign_reg[3]) is unused and will be r
 WARNING: [Synth 8-3332] Sequential element (sign_reg[2]) is unused and will be removed from module ALU_module.
 WARNING: [Synth 8-3332] Sequential element (sign_reg[1]) is unused and will be removed from module ALU_module.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:26 ; elapsed = 00:03:33 . Memory (MB): peak = 2857.551 ; gain = 1624.098
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:15 ; elapsed = 00:04:21 . Memory (MB): peak = 2739.137 ; gain = 1506.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -502,125 +502,8 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:36 ; elapsed = 00:03:43 . Memory (MB): peak = 2857.551 ; gain = 1624.098
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:25 ; elapsed = 00:04:30 . Memory (MB): peak = 2739.137 ; gain = 1506.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:04 ; elapsed = 00:04:11 . Memory (MB): peak = 3157.520 ; gain = 1924.066
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:06 ; elapsed = 00:04:38 . Memory (MB): peak = 3157.520 ; gain = 1924.066
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:11 ; elapsed = 00:04:43 . Memory (MB): peak = 3157.520 ; gain = 1924.066
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:11 ; elapsed = 00:04:43 . Memory (MB): peak = 3157.520 ; gain = 1924.066
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:12 ; elapsed = 00:04:45 . Memory (MB): peak = 3157.520 ; gain = 1924.066
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:12 ; elapsed = 00:04:45 . Memory (MB): peak = 3157.520 ; gain = 1924.066
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:12 ; elapsed = 00:04:45 . Memory (MB): peak = 3157.520 ; gain = 1924.066
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:12 ; elapsed = 00:04:45 . Memory (MB): peak = 3157.520 ; gain = 1924.066
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |    50|
-|3     |LUT1   |     4|
-|4     |LUT2   |   403|
-|5     |LUT3   |   135|
-|6     |LUT4   |   167|
-|7     |LUT5   |   347|
-|8     |LUT6   |  2927|
-|9     |MUXF7  |  1121|
-|10    |MUXF8  |   544|
-|11    |FDCE   |   440|
-|12    |FDPE   |  8208|
-|13    |FDRE   |   224|
-|14    |LD     |     1|
-|15    |LDC    |    40|
-|16    |IBUF   |    19|
-|17    |OBUF   |    64|
-+------+-------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:12 ; elapsed = 00:04:45 . Memory (MB): peak = 3157.520 ; gain = 1924.066
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 146 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:33 ; elapsed = 00:04:33 . Memory (MB): peak = 3157.520 ; gain = 1924.066
-Synthesis Optimization Complete : Time (s): cpu = 00:04:12 ; elapsed = 00:04:46 . Memory (MB): peak = 3157.520 ; gain = 1924.066
-INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.158 . Memory (MB): peak = 3157.520 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1756 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'MIPS_CPU_TOP' is not ideal for floorplanning, since the cellview 'DataMemoryFile' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 32 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 3157.520 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 41 instances were transformed.
-  LD => LDCE: 1 instance 
-  LDC => LDCE: 8 instances
-  LDC => LDCE (inverted pins: G): 32 instances
-
-Synth Design complete, checksum: 37a38ad4
-INFO: [Common 17-83] Releasing license: Synthesis
-193 Infos, 151 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:18 ; elapsed = 00:04:52 . Memory (MB): peak = 3157.520 ; gain = 1924.066
-INFO: [Common 17-1381] The checkpoint 'D:/Long_Teng/Long_Teng/MIPS_CPU/MIPS_CPU.runs/synth_1/MIPS_CPU_TOP.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file MIPS_CPU_TOP_utilization_synth.rpt -pb MIPS_CPU_TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 30 22:01:32 2022...

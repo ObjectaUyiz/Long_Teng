@@ -27,11 +27,13 @@ module MIPS_CPU_TOP(
     input emptyena,
     input [15:0] Interupt,
     output [31:0] PC_out,
-    output [31:0] IO_dataout
+    output [31:0] IO_dataout,
+    output [31:0] Device_ena,
+    output [5:0] Device_drive_type
     );
     //Define different stage resources, include wire,reg etc. 变量在同一阶段中的使用使用阶段作为前缀经过转换后变换成需要存入下一阶段的变量名，若从其他阶段传入则由“传入阶段——变量名——到达阶段”命名
     wire Ifena,EXL_status,AddrError;
-    wire clear;
+    wire clear,syscall_table_ena;
     wire [7:0] Exception_busy_type;
     //IF
     wire [31:0] Instruction,IF_Instruction_ID,Return_pc,EI_entry_addr;
@@ -41,8 +43,8 @@ module MIPS_CPU_TOP(
     wire Sel_extend,ID_SignalException_EXE,ID_SignalException;
     wire [1:0] sel_imm,sel_REG_w;
     wire [2:0] ID_sel_alua,ID_sel_alub,ID_sel_alua_EXE,ID_sel_alub_EXE,ID_mdata_sel,ID_mdata_sel_EXE;
-    wire [5:0] ID_opcode,ID_opcode_EXE,ID_fun,ID_fun_EXE;
-    wire [4:0] ID_rs,ID_rs_EXE,ID_rd,ID_rd_EXE,ID_rt,ID_rt_EXE,ID_sa,ID_sa_EXE,ID_rf_write_addr,ID_rf_write_addr_EXE;
+    wire [5:0] ID_opcode,ID_opcode_EXE,ID_fun,ID_fun_EXE,syscall_type;
+    wire [4:0] ID_rs,ID_rs_EXE,ID_rd,ID_rd_EXE,ID_rt,ID_rt_EXE,ID_sa,ID_sa_EXE,ID_rf_write_addr,ID_rf_write_addr_EXE,syscall_addr;
     wire [15:0] ID_imm;
     wire [25:0] ID_instr_index;
     wire [3:0] ID_sel_alu_op,ID_sel_alu_op_EXE;
@@ -92,7 +94,8 @@ module MIPS_CPU_TOP(
 
     ID_Controller IDc(.clk(clk),.reset(reset),.areset(areset),.Instruction(Instruction),.Ifena(Ifena),.IF_Pipeline_ID(IF_Pipeline_ID),.ID_Pipeline_EXE(ID_Pipeline_EXE),.EXE_Pipeline_MEM(EXE_Pipeline_MEM),.MEM_Pipeline_WB(MEM_Pipeline_WB),.Sel_PC(Sel_PC),
                         .Sel_alua(ID_sel_alua),.Sel_alub(ID_sel_alub),.Sel_Imm(sel_imm),.Sel_extend(Sel_extend),.Sel_REG_w_ena(WB_wirte_ena_ID),.Sel_REG_w(sel_REG_w),.SignalException(ID_SignalException),.Sel_alu_op(ID_sel_alu_op),.Memory_Data_rw_ena(ID_memory_data_rw_ena)
-                        ,.Mem_wmdata_sel(ID_mdata_sel),.Zeroflag(WB_Zeroflag),.AluaLessAlubflag(WB_AluaLessAlub),.AlubLessAluaflag(WB_AlubLessAlua),.Aluaebflag(WB_Aluaeb),.Aluanebflag(WB_Aluaneb),.IntegerOverflowflag(WB_IntegerOverflow),.Exception_busy(Exception_busy_type),.EXL_status(EXL_status),.clear(clear));
+                        ,.Mem_wmdata_sel(ID_mdata_sel),.Zeroflag(WB_Zeroflag),.AluaLessAlubflag(WB_AluaLessAlub),.AlubLessAluaflag(WB_AlubLessAlua),.Aluaebflag(WB_Aluaeb),.Aluanebflag(WB_Aluaneb),.IntegerOverflowflag(WB_IntegerOverflow),.Exception_busy(Exception_busy_type),.EXL_status(EXL_status),.clear(clear)
+                        ,.syscall_table_ena(syscall_table_ena));
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     CP0 cp0(.clk(clk),.areset(areset),.clear(clear),.Interupt(Interupt),.Exception_return_pc_addr(MEM_PC_next_4),.return_pc_addr(Return_pc),.IntegerOverflow_exception(MEM_IntegerOverflow),.Address_exception(AddrError),.Syscall(0),.Exception_busy_type(Exception_busy_type),.EXL_status(EXL_status),.EI_entry_addr(EI_entry_addr));
     //IF stage
@@ -102,6 +105,7 @@ module MIPS_CPU_TOP(
     //ID stage
     IF_ID_registers ifid(clk,areset,IF_Pipeline_ID,Instruction,PC_next,IF_Instruction_ID,IF_PC_next_ID);
     InstructionDecoder ID(IF_Instruction_ID,ID_opcode,ID_rs,ID_rt,ID_rd,ID_sa,ID_fun,ID_imm,ID_instr_index);
+    syscall_table st(areset,syscall_table_ena,ID_fun,ID_sa,syscall_type,syscall_addr);
     PC_next_add4 pna4(IF_PC_next_ID,ID_PC_next_4);
     Register_wirte_address_selection rwas(sel_REG_w,ID_rt,ID_rd,5'b11111,ID_rf_write_addr);
     Immediate_dealing ImmD(areset,sel_imm,Sel_extend,ID_imm,ID_instr_index,ID_immediate);
@@ -126,7 +130,7 @@ module MIPS_CPU_TOP(
     assign {MEM_ALU_Result_REGrs_EXE,MEM_ALU_Result_REGrt_EXE} = {MEM_ALU_Result,MEM_ALU_Result};
     Datamemory_addr_translater dat(MEM_opcode,MEM_immediate,MEM_memory_addr,MEM_dataaddr_exception);
     DataMem_dataselection dd(areset,MEM_mdata_sel,MEM_REGrt,WB_rf_write_data_ID,MEM_memorydata_w);
-    IO_cache ic(clk,MEM_memory_addr[31],MEM_REGrt,IO_dataout);
+    IO_cache ic(clk,areset,syscall_type,syscall_addr,MEM_ALU_Result,IO_dataout,Device_ena,Device_drive_type);
     DataMemoryFile dmf(clk,areset,MEM_memory_data_rw_ena,MEM_memory_addr,MEM_memorydata_w,MEM_memory_addr,MEM_Memory_data_out[7:0],MEM_Memory_data_out[15:8],MEM_Memory_data_out[23:16],MEM_Memory_data_out[31:24],AddrError);
     assign {MEM_REGrs_Memroy_dataout_EXE,MEM_REGrt_Memroy_dataout_EXE} = {MEM_Memory_data_out,MEM_Memory_data_out};
     MEM_WB_var_converter mwvc(MEM_opcode,MEM_fun,MEM_rs,MEM_rt,MEM_rd,MEM_REGrs,MEM_REGrt,MEM_Memory_data_out,MEM_ALU_Result,MEM_alu_flag,MEM_PC_next_4,MEM_rf_write_addr,MEM_immediate,MEM_IntegerOverflow,MEM_AluaLessAlub,MEM_AlubLessAlua,MEM_Aluaeb,MEM_Zeroflag,MEM_Aluaneb,
