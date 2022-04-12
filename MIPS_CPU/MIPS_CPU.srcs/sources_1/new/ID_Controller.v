@@ -152,7 +152,7 @@ module ID_Controller(
             E: state_next = (EXL_status)?N:A;
             L: state_next = M;
             M: state_next = N;
-            N: state_next = (sel_state==A)?A:(sel_state==B)?B:N;
+            N: state_next = (sel_state==A)?(EXL_status)?N:A:(sel_state==B)?B:N;
             default:state_next = A;
             endcase
     end
@@ -179,6 +179,7 @@ module ID_Controller(
     always@(*) begin
         case(state_IF)
         JR,J,JAL,JALR,BEQ,BNE,BGEZ,BGTZ,BLEZ,BLTZ,ERET,SYSCALL: sel_state = B;
+
         default: sel_state = A;
         endcase
     end

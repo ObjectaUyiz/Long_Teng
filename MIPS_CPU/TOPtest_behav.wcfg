@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="80.751 ns"></ZoomStartTime>
-      <ZoomEndTime time="231.573 ns"></ZoomEndTime>
-      <Cursor1Time time="151.291 ns"></Cursor1Time>
+      <ZoomStartTime time="815.518 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,115.519 ns"></ZoomEndTime>
+      <Cursor1Time time="986.475 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="274"></NameColumnWidth>
-      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+      <NameColumnWidth column_width="272"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="15" />
+   <WVObjectSize size="19" />
    <wvobject fp_name="/TOPtest/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -77,6 +77,22 @@
       <obj_property name="ElementShortName">state_WB[7:0]</obj_property>
       <obj_property name="ObjectShortName">state_WB[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOPtest/top/RF/Register_Pile[1]" type="array">
+      <obj_property name="ElementShortName">[1][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOPtest/top/RF/Register_Pile[2]" type="array">
+      <obj_property name="ElementShortName">[2][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOPtest/top/RF/Register_Pile[3]" type="array">
+      <obj_property name="ElementShortName">[3][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOPtest/top/RF/Register_Pile[31]" type="array">
+      <obj_property name="ElementShortName">[31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[31][31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/TOPtest/top/IDc/EXL_status" type="logic">
       <obj_property name="ElementShortName">EXL_status</obj_property>
