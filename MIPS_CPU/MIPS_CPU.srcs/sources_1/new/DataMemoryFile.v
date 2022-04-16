@@ -42,6 +42,7 @@ module DataMemoryFile(
     wire [7:0] Data_memory_3;
     reg [31:0] Data_memory[0:1023];
     reg [7:0] Data_memory_0_inter,Data_memory_1_inter,Data_memory_2_inter,Data_memory_3_inter;
+    reg ERROR,AddrError_inter;
 
     assign {Data_memory_3,Data_memory_2,Data_memory_1,Data_memory_0} = Data_memory[Waddr[11:2]];
 
@@ -87,10 +88,20 @@ module DataMemoryFile(
         end
     end
 
+    always @(*) begin
+        ERROR = ena[5]?0:(((ena[4]&~ena[3])&(|Raddr[1:0]))|(((~ena[4])&(~ena[3]))&(|Waddr[1:0])));
+    end
+
+    always @(negedge clk or posedge areset) begin
+        if(areset) AddrError_inter = 0;
+        else 
+        AddrError_inter = ERROR;
+    end
+
     assign R_data_0 = ena[5]?0:Data_memory_0_inter;
     assign R_data_1 = ena[5]?0:Data_memory_1_inter;
     assign R_data_2 = ena[5]?0:Data_memory_2_inter;
     assign R_data_3 = ena[5]?0:Data_memory_3_inter;
-    assign AddrError = ena[5]?0:((ena[4]&~ena[3])&(|Raddr[1:0])|((~ena[4])&(~ena[3]))&(|Waddr[1:0]));
+    assign AddrError = AddrError_inter;
 
 endmodule

@@ -34,8 +34,8 @@ module ALU_Flag_Handler(
     output Exception_control
     );
 
-    assign Exception_control = areset?0:Exception_ena&ALU_Flag[0];
-    assign IntegerOverflow = areset?0:Exception_ena&ALU_Flag[0];
+    assign Exception_control = areset?0:(Exception_ena&ALU_Flag[0]);
+    assign IntegerOverflow = areset?0:(Exception_ena&ALU_Flag[0]);
     assign AluaLessAlub = areset?0:ALU_Flag[2];
     assign AlubLessAlua = areset?0:ALU_Flag[3];
     assign Aluaeb = areset?0:ALU_Flag[1];

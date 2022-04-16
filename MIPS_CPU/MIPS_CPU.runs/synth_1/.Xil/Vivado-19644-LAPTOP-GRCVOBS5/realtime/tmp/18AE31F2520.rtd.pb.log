@@ -1,0 +1,44 @@
+xilinx rtfpga
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB0 has port O1026[1] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB0 has port EXE_Pipeline_MEM[1] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB0 has port MEM_Pipeline_WB[1] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB0 has port Sel_alu_op[3] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB0 has port Mem_wmdata_sel[2] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB0 has port Memory_Data_rw_ena[2] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB0 has port Memory_Data_rw_ena[1] driven by constant 0
+WARNING: [Synth 8-3917] design MIPS_CPU_TOP__GCB0 has port Memory_Data_rw_ena[0] driven by constant 0
+INFO: [Synth 8-3886] merging instance 'IDc/rt_id_reg[4]' (FDC) to 'IDc/state_ID_reg[6]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[0][0]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[1][0]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[28][0]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][1]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[2][0]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[0][1]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[1][1]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[2][1]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[28][1]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[0][2]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[2][2]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\IDc/iwt/instruction_write_reg_index_reg[1][2] )
+INFO: [Synth 8-3886] merging instance 'IDc/iwt/instruction_write_reg_index_reg[2][2]' (FD) to 'IDc/iwt/instruction_write_reg_index_reg[28][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDc/iwt/instruction_write_reg_index_reg[28][2] )
+INFO: [Synth 8-3886] merging instance 'IDc/state_ID_reg[7]' (FDC) to 'IDc/state_ID_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDc/state_ID_reg[6] )
+INFO: [Synth 8-3886] merging instance 'IDc/state_reg[6]' (FDCP) to 'IDc/state_reg[4]'
+INFO: [Synth 8-3886] merging instance 'IDc/state_reg[7]' (FDCP) to 'IDc/state_reg[4]'
+INFO: [Synth 8-3886] merging instance 'IDc/state_reg[5]' (FDCP) to 'IDc/state_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDc/state_reg[4] )
+INFO: [Synth 8-3886] merging instance 'IDc/state_EXE_reg[6]' (FDC) to 'IDc/rt_exe_reg[4]'
+INFO: [Synth 8-3886] merging instance 'IDc/state_ID_reg[6]' (FDC) to 'IDc/rt_exe_reg[4]'
+INFO: [Synth 8-3886] merging instance 'IDc/state_EXE_reg[7]' (FDC) to 'IDc/rt_exe_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDc/rt_exe_reg[4] )
+INFO: [Synth 8-3886] merging instance 'IDc/rt_exe_reg[4]' (FDC) to 'IDc/state_MEM_reg[6]'
+INFO: [Synth 8-3886] merging instance 'IDc/state_MEM_reg[6]' (FDC) to 'IDc/state_MEM_reg[7]'
+INFO: [Synth 8-3886] merging instance 'IDc/state_MEM_reg[7]' (FDC) to 'IDc/rt_mem_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDc/rt_mem_reg[4] )
+INFO: [Synth 8-3886] merging instance 'IDc/rt_wb_reg[4]' (FDC) to 'IDc/state_WB_reg[7]'
+INFO: [Synth 8-3886] merging instance 'IDc/rt_mem_reg[4]' (FDC) to 'IDc/state_WB_reg[7]'
+INFO: [Synth 8-3886] merging instance 'IDc/state_WB_reg[7]' (FDC) to 'IDc/state_WB_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDc/state_WB_reg[6] )
+INFO: [Synth 8-3886] merging instance 'IDc/rd_id_reg[0]' (FDC) to 'IDc/rd_id_reg[2]'
+INFO: [Synth 8-3886] merging instance 'IDc/rd_exe_reg[0]' (FDC) to 'IDc/rd_exe_reg[2]'
+INFO: [Synth 8-3886] merging instance 'IDc/rd_mem_reg[0]' (FDC) to 'IDc/rd_mem_reg[2]'
+INFO: [Synth 8-3886] merging instance 'IDc/rd_wb_reg[0]' (FDC) to 'IDc/rd_wb_reg[2]'

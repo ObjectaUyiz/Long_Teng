@@ -52,7 +52,9 @@ module ID_Controller(
     output [2:0] Mem_wmdata_sel,
     output [5:0] Memory_Data_rw_ena,
     output InteruptEna,
-    output syscall_table_ena
+    output syscall_table_ena,
+    output Err_instruction,
+    output Empty_ins
     );
     //异常类型：溢出，中断，系统调用？，地址错，异常指令保留
     parameter   ERROR=0,EMPTY_INSTRUCTION=38,ADD=1,ADDI=2,ADDU=3,ADDIU=4,SUB=5,SLT=6,MUL=7,AND=8,ANDI=9,LUI=10,
@@ -64,7 +66,7 @@ module ID_Controller(
     parameter   A=0,exe=0,B=1,mem=1,C=2,wb=2,D=3,E=4,F=5,G=6,H=7,I=8,K=9,L=10,M=11,N=12,O=13,P=14,E_I=15;
     parameter [34:0] write_map = {2'b00,3'b111,1'b0,1'b1,7'b0000000,20'b11111111111111111111,1'b0};//有哪些指令需要写寄存器
     
-    reg InteruptEna_inter,syscall_table_ena_inter;
+    reg InteruptEna_inter,syscall_table_ena_inter,Err_instruction_inter,Empty_ins_inter;
     wire [2:0] writereg_index_EXE,writereg_index_MEM,writereg_index_WB; 
     wire [2:0] writereg_type_EXE,writereg_type_MEM,writereg_type_WB;
     reg [127:0] conflict_map;//维护一张表，其中包含5个阶段中的各个指令的位置，当最后一个阶段结束后自动回0
@@ -105,7 +107,7 @@ module ID_Controller(
             {opcode,rs,rt,rd,sa,fun} = 0;
         end
         else begin
-        if(state == A||state == F||state == N) begin
+        if(state == A||state == N) begin
         {opcode,rs,rt,rd,sa,fun} = Instruction;
         case(opcode)
             6'b000000: state_IF = (fun==6'b100000)?ADD:(fun==6'b100001)?ADDU:(fun==6'b100010)?SUB:
@@ -133,7 +135,7 @@ module ID_Controller(
             6'b101011: state_IF = SW;
             6'b011111: state_IF = SYSCALL; 
             6'b010000: state_IF = (fun==6'b011000)?ERET:ERROR;
-            default:state_IF = EMPTY_INSTRUCTION;
+            default:state_IF = ERROR;
         endcase
         end
         else begin
@@ -145,7 +147,7 @@ module ID_Controller(
 
     always @(*) begin
             case(state)
-            A: state_next = (sel_state==B)?B:(sel_state==C)?C:(sel_state==D)?D:(EXL_status)?L:A;
+            A: state_next = (EXL_status)?L:(sel_state==B)?B:(sel_state==C)?C:(sel_state==D)?D:A;
             B: state_next = C;
             C: state_next = D;
             D: state_next = E;
@@ -184,6 +186,7 @@ module ID_Controller(
         endcase
     end
 ///////////////////////////////ID stage//////////////////////////////////////////////////////////
+    
     //冲突检测
     always @(*) begin //检测是否有冲突
         case(write_map[state_EXE])
@@ -220,7 +223,7 @@ module ID_Controller(
                                 (rs_id==conf_reg_mem)?(writereg_type_MEM[0])?3'b101:3'b100:
                                 (rs_id==conf_reg_wb)?3'b000:3'b000;
                 Sel_alub_inter=3'b001;end
-            LUI:begin Sel_alua_inter=3'b010;Sel_alub_inter=3'b010;end
+            LUI:begin Sel_alua_inter=3'b010;Sel_alub_inter=3'b001;end
             BGEZ,BGTZ,BLEZ,BLTZ,SYSCALL:begin 
                 Sel_alua_inter=(rs_id==0)?3'b000:(rs_id==conf_reg_exe)?(writereg_type_EXE[0])?3'b110:3'b100:
                                 (rs_id==conf_reg_mem)?(writereg_type_MEM[0])?3'b101:3'b100:
@@ -312,7 +315,7 @@ module ID_Controller(
         end
         else begin
         case(state_ID)
-            ADD,ADDU,SUB,LW,SW:SignalException_inter=1;
+            ADD,ADDI,SUB,LW,SW:SignalException_inter=1;
             default:SignalException_inter=0;
         endcase
         end
@@ -374,8 +377,16 @@ module ID_Controller(
         end
     end
     /////////////////////////////////////////EXE stage/////////////////////////////////////////////////
-
-    
+    //错误指令
+    always @(*) begin
+        if(areset) Err_instruction_inter = 0;
+        else begin
+            case(state_EXE)
+            ERROR: Err_instruction_inter = 1;
+            default: Err_instruction_inter = 0;
+            endcase
+        end
+    end
 
     /////////////////////////////////////////MEM stage///////////////////////////////
     
@@ -442,6 +453,18 @@ module ID_Controller(
             default:Sel_PC_inter = 0;
             endcase
             end
+        end
+    end
+
+    always @(*) begin
+        if(areset)begin
+            Empty_ins_inter = 0;
+        end
+        else begin
+            case(state_WB)
+            EMPTY_INSTRUCTION: Empty_ins_inter = 1;
+            default: Empty_ins_inter = 0;
+            endcase
         end
     end
 
@@ -528,5 +551,7 @@ end
     assign clear = clear_inter;
     assign InteruptEna = InteruptEna_inter;
     assign syscall_table_ena = syscall_table_ena_inter;
+    assign Err_instruction = Err_instruction_inter;
+    assign Empty_ins = Empty_ins_inter;
 
 endmodule

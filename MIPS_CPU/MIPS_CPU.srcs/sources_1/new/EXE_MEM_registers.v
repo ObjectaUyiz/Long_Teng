@@ -24,6 +24,7 @@ module EXE_MEM_registers(
     input Aluaeb,
     input Zeroflag,
     input Aluaneb,
+    input Err_instruction,
     output [5:0] MEM_opcode_WB,
     output [5:0] MEM_fun_WB,
     output [4:0] MEM_rs_WB,
@@ -44,7 +45,8 @@ module EXE_MEM_registers(
     output MEM_AlubLessAlua_WB,
     output MEM_Aluaeb_WB,
     output MEM_Zeroflag_WB,
-    output MEM_Aluaneb_WB
+    output MEM_Aluaneb_WB,
+    output MEM_Err_instruction_WB
 );
 
 
@@ -69,6 +71,7 @@ module EXE_MEM_registers(
     reg Aluaeb_inter;
     reg Zeroflag_inter;
     reg Aluaneb_inter;
+    reg Err_instruction_inter;
     wire [31:0] empty;
 
     assign empty = 0;
@@ -96,6 +99,7 @@ module EXE_MEM_registers(
             Aluaeb_inter <= 0;
             Zeroflag_inter <= 0;
             Aluaneb_inter <= 0;
+            Err_instruction_inter <= 0;
         end
         else begin
         case(pipeline_control)
@@ -121,6 +125,7 @@ module EXE_MEM_registers(
             Aluaeb_inter <= Aluaeb;
             Zeroflag_inter <= Zeroflag;
             Aluaneb_inter <= Aluaneb;
+            Err_instruction_inter <= Err_instruction;
         end
         2'b01:begin 
             opcode_inter <= empty;
@@ -144,6 +149,7 @@ module EXE_MEM_registers(
             Aluaeb_inter <= empty;
             Zeroflag_inter <= empty;
             Aluaneb_inter <= empty;
+            Err_instruction_inter <= empty;
         end
         2'b10:begin
             opcode_inter <= opcode_inter;
@@ -167,6 +173,7 @@ module EXE_MEM_registers(
             Aluaeb_inter <= Aluaeb_inter;
             Zeroflag_inter <= Zeroflag_inter;
             Aluaneb_inter <= Aluaneb_inter;
+            Err_instruction_inter <= Err_instruction_inter;
         end
         endcase
         end
@@ -193,5 +200,6 @@ module EXE_MEM_registers(
     assign MEM_Aluaeb_WB = Aluaeb_inter;
     assign MEM_Zeroflag_WB = Zeroflag_inter;
     assign MEM_Aluaneb_WB = Aluaneb_inter;
+    assign MEM_Err_instruction_WB = Err_instruction_inter;
 
 endmodule

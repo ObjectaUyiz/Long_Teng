@@ -25,61 +25,25 @@ module InstructionMemory(
     input [11:2] InstAddr,
     output [31:0] Instruction
     );
-    reg [31:0] InstMem[0:2047];
+    reg [31:0] InstMem[0:1023];
 
     initial begin
-        InstMem[0] = 32'h34038000;
-        InstMem[1] = 32'h00031c00;
-        InstMem[2] = 32'h34010001;
-        InstMem[3] = 32'h08100006;
-        InstMem[4] = 32'h34011111;
-        InstMem[5] = 32'h34011100;
-        InstMem[6] = 32'h34010003;
-        InstMem[7] = 32'h0c10000f;
-        InstMem[8] = 32'h34011111;
-        InstMem[9] = 32'h34011100;
-        InstMem[10] = 32'h34011111;
-        InstMem[11] = 32'h1420000e;
-        InstMem[12] = 32'h00000000;
-        InstMem[13] = 32'h34011100;
-        InstMem[14] = 32'h34011111;
-        InstMem[15] = 32'h34010004;
-        InstMem[16] = 32'h10630009;
-        InstMem[17] = 32'h03e00825;
-        InstMem[18] = 32'h34011111;
-        InstMem[19] = 32'h34011100;
-        InstMem[20] = 32'h34010007;
-        InstMem[21] = 32'h34010008;
-        InstMem[22] = 32'h1c200007;
-        InstMem[23] = 32'h34000009;
-        InstMem[24] = 32'h34011111;
-        InstMem[25] = 32'h34011100;
-        InstMem[26] = 32'h34010005;
-        InstMem[27] = 32'h0421fff8;
-        InstMem[28] = 32'h34011111;
-        InstMem[29] = 32'h34011100;
-        InstMem[30] = 32'h3401000a;
-        InstMem[31] = 32'h00000000;
-        InstMem[32] = 32'h001f0825;
-        InstMem[33] = 32'h3401000b;
-        InstMem[34] = 32'h3401000c;
-        InstMem[35] = 32'h3401000d;
-        InstMem[36] = 32'h3401000e;
-        InstMem[37] = 32'h04600002;
-        InstMem[38] = 32'h3401000f;
-        InstMem[39] = 32'h34011100;
-        InstMem[40] = 32'h34010010;
-        InstMem[41] = 32'h1820ffea;
-        InstMem[42] = 32'h34010011;
-        InstMem[43] = 32'h34010012;
-        InstMem[44] = 32'h34010013;
-        InstMem[45] = 32'h18600002;
-        InstMem[46] = 32'h001f0825;
-        InstMem[47] = 32'h34011100;
-        InstMem[48] = 32'h34010014;
-        InstMem[49] = 32'h00000000;
-        InstMem[50] = 32'h08100032;
-        InstMem[51] = 32'h00000000;
+        InstMem[0] = 32'h34080001;
+        InstMem[1] = 32'hffffffff;
+        InstMem[2] = 32'h34090001;
+        InstMem[3] = 32'h00421026;
+        InstMem[4] = 32'h34030008;
+        InstMem[5] = 32'h3c048040;
+        InstMem[6] = 32'h01095021;
+        InstMem[7] = 32'h35280000;
+        InstMem[8] = 32'h35490000;
+        InstMem[9] = 32'hac890000;
+        InstMem[10] = 32'h24840004;
+        InstMem[11] = 32'h24420001;
+        InstMem[12] = 32'h1443fffa;
+        InstMem[13] = 32'h34000000;
+        InstMem[14] = 32'h03e00008;
+        InstMem[15] = 32'h34000000;
         // InstMem[0] = 32'h3403eeff;
         // InstMem[1] = 32'ha0030003;
         // InstMem[2] = 32'h00031a02;
@@ -110,9 +74,9 @@ module InstructionMemory(
         // InstMem[12] = 32'h00000000;
         // InstMem[13] = 32'h00000000;
         // InstMem[14] = 32'h00000000;
-        // InstMem[500] = 32'h080003e8;//j to 1000
-        // InstMem[1000] = 32'h7C000040;
-        // InstMem[1001] = 32'h42000018;
+         InstMem[500] = 32'h080003e8;//j to 1000
+         InstMem[1000] = 32'h7C000040;
+         InstMem[1001] = 32'h42000018;
         
     end
     

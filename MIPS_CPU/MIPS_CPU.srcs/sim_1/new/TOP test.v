@@ -42,7 +42,7 @@ module TOPtest(
         
         emptyena = 0;
         jumpena = 0;
-        clk = 1;
+        clk = 0;
         Ifena=1;
         Interupt=0;
         areset = 1;#1 areset = 0;

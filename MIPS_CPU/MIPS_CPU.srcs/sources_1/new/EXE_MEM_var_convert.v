@@ -42,6 +42,7 @@ module EXE_MEM_var_convert(
     input EXE_Aluaeb,
     input EXE_Zeroflag,
     input EXE_Aluaneb,
+    input EXE_Err_instruction,
     output [5:0] EXE_opcode_MEM,
     output [5:0] EXE_fun_MEM,
     output [4:0] EXE_rs_MEM,
@@ -62,7 +63,8 @@ module EXE_MEM_var_convert(
     output EXE_AlubLessAlua_MEM,
     output EXE_Aluaeb_MEM,
     output EXE_Zeroflag_MEM,
-    output EXE_Aluaneb_MEM
+    output EXE_Aluaneb_MEM,
+    output EXE_Err_instruction_MEM
     );
 
     assign EXE_opcode_MEM = EXE_opcode;
@@ -86,5 +88,6 @@ module EXE_MEM_var_convert(
     assign EXE_Aluaeb_MEM = EXE_Aluaeb;
     assign EXE_Zeroflag_MEM = EXE_Zeroflag;
     assign EXE_Aluaneb_MEM = EXE_Aluaneb;
+    assign EXE_Err_instruction_MEM = EXE_Err_instruction;
 
 endmodule

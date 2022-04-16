@@ -1,0 +1,2 @@
+MIPS_CPU_TOP: MIPS_CPU_TOP__GCB1, MIPS_CPU_TOP__GCB0, DataMemoryFile__GB5, DataMemoryFile__GB4, DataMemoryFile__GB3, DataMemoryFile__GB2, DataMemoryFile__GB1, muxpart__2099_DataMemoryFile, 
+DataMemoryFile: DataMemoryFile__GB5, DataMemoryFile__GB4, DataMemoryFile__GB3, DataMemoryFile__GB2, DataMemoryFile__GB1, muxpart__2099_DataMemoryFile, 

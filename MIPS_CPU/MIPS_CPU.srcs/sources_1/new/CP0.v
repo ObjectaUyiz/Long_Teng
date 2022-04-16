@@ -29,6 +29,8 @@ module CP0(
     input IntegerOverflow_exception,
     input Address_exception,
     input Syscall,
+    input Err_instruction_exception,
+    input Empty_ins,
     output [31:0] return_pc_addr,
     output [31:0] EI_entry_addr,
     output [7:0] Exception_busy_type,
@@ -36,13 +38,15 @@ module CP0(
     output EXL_status
     );
 
-    parameter IntegerOverflow=2,AddressWrong=1,SyscallInterupt=3,TimeOverflow=4,Count=9,Status=12,EPC=14,Cause=13,Compare=11,EXL=8;
+    parameter IntegerOverflow=2,AddressWrong=1,SyscallInterupt=3,Errorinstruction=4,TimeOverflow=5,Count=9,Status=12,EPC=14,Cause=13,Compare=11,EXL=8;
     reg [31:0] Reg_CP0 [0:31];
     reg [31:0] EI_entry [0:19];
 
     always @(posedge areset) begin
         EI_entry[IntegerOverflow] = 32'h000007d0;
         EI_entry[AddressWrong] = 32'h00000fa0;
+        EI_entry[Errorinstruction] = 32'h000007d0;
+
     end
 
 
@@ -51,7 +55,14 @@ module CP0(
             Reg_CP0[Status] = 32'h1000_0000;
         end
         else begin
-            Reg_CP0[Status] = Address_exception?{Reg_CP0[Status][31:9],9'b100000001}:IntegerOverflow_exception?{Reg_CP0[Status][31:9],9'b100000010}:Syscall?{Reg_CP0[Status][31:9],9'b100000011}:|Interupt?{Reg_CP0[Status][31:9],9'b100000100}:Reg_CP0[TimeOverflow]?{Reg_CP0[Status][31:9],9'b100000101}:clear?{Reg_CP0[Status][31:9],9'b0}:Reg_CP0[Status];
+            Reg_CP0[Status] = IntegerOverflow_exception?{Reg_CP0[Status][31:9],9'b100000010}
+                            :Address_exception?{Reg_CP0[Status][31:9],9'b100000001}
+                            :Err_instruction_exception?{Reg_CP0[Status][31:9],9'b100000100}
+                            :Syscall?{Reg_CP0[Status][31:9],9'b100000011}
+                            :(|Interupt)?{Reg_CP0[Status][31:9],9'b100000110}
+                            :Reg_CP0[TimeOverflow]?{Reg_CP0[Status][31:9],9'b100000101}
+                            :clear?{Reg_CP0[Status][31:9],9'b0}
+                            :Reg_CP0[Status];
         end
     end
 
@@ -64,10 +75,10 @@ module CP0(
         end
     end
 
-    always @(*) begin
+    always @(posedge Reg_CP0[Status][EXL]) begin
         if(areset)Reg_CP0[EPC] = 0;
         else begin
-        Reg_CP0[EPC] = Reg_CP0[Status][EXL]?Reg_CP0[EPC]:Exception_return_pc_addr;
+        Reg_CP0[EPC] = Empty_ins?(Exception_return_pc_addr):(Exception_return_pc_addr-4);//Reg_CP0[Status][EXL]?Reg_CP0[EPC]:Empty_ins?(Exception_return_pc_addr):(Exception_return_pc_addr-4);
         end
     end
 

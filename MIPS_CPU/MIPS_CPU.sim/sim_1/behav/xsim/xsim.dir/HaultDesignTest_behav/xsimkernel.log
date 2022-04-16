@@ -1,7 +1,0 @@
-Running: xsim.dir/HaultDesignTest_behav/xsimk.exe -simmode gui -wdb HaultDesignTest_behav.wdb -simrunnum 0 -socket 1910
-Design successfully loaded
-Design Loading Memory Usage: 7424 KB (Peak: 7424 KB)
-Design Loading CPU Usage: 31 ms
-Simulation completed
-Simulation Memory Usage: 8244 KB (Peak: 8244 KB)
-Simulation CPU Usage: 124 ms

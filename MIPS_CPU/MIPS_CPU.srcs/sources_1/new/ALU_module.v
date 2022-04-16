@@ -30,9 +30,10 @@ module ALU_module(
     output reg [31:0] outputR,
     output [7:0] flag
     );
-    parameter ERROR=0,ADD=1,ADDI=2,ADDU=3,ADDIU=4,SUB=5,SLT=6,MUL=7,AND=8,ANDI=9,LUI=10,
-              OR=11,ORI=12,XOR=13,XORI=14,SLLV=15,SLL=16,SRAV=17,SRA=18,SRLV=19,
-              SRL=20,BEQ=21,BNE=22,BGEZ=23,BGTZ=24,BLEZ=25,BLTZ=26,J=27,JAL=28,JR=29,JALR=30;
+    parameter ERROR=0,EMPTY_INSTRUCTION=38,ADD=1,ADDI=2,ADDU=3,ADDIU=4,SUB=5,SLT=6,MUL=7,AND=8,ANDI=9,LUI=10,
+                OR=11,ORI=12,XOR=13,XORI=14,SLLV=15,SLL=16,SRAV=17,SRA=18,SRLV=19,
+                SRL=20,BEQ=21,BNE=22,BGEZ=23,BGTZ=24,BLEZ=25,BLTZ=26,J=27,JAL=28,JR=29,
+                JALR=30,LB=31,LW=32,SB=33,SW=34,SYSCALL=35,NOP=36,ERET=37;
               //sign[0]/////////////////sign[1]//////////////sign[2]/////////sign[3]///////////sign[7]
     parameter IntegerOverflow=8'b00000001,Zero=8'b00000010,ALess=8'b00000100,BLess=8'b00001000,Error=8'b10000000;
     
@@ -51,8 +52,8 @@ module ALU_module(
                                 (fun==6'b000010)?SRL:(fun==6'b001000)?JR:(fun==6'b001001)?JALR:ERROR;
             6'b001000: state = ADDI;
             6'b001001: state = ADDIU;
-            6'b011100: state = MUL;
             6'b001100: state = ANDI;
+            6'b011100: state = MUL;
             6'b001111: state = LUI;
             6'b001101: state = ORI;
             6'b001110: state = XORI;
@@ -63,7 +64,13 @@ module ALU_module(
             6'b000110: state = BLEZ;
             6'b000010: state = J;
             6'b000011: state = JAL;
-            default: state = ERROR;
+            6'b100000: state = LB;
+            6'b100011: state = LW;
+            6'b101000: state = SB;
+            6'b101011: state = SW;
+            6'b011111: state = SYSCALL; 
+            6'b010000: state = (fun==6'b011000)?ERET:ERROR;
+            default:state = ERROR;
         endcase
         end
     end
@@ -90,7 +97,7 @@ module ALU_module(
             BNE,BEQ: outputR = inputA - inputB;
             BLTZ,BLEZ: {sign[0],outputR} = {inputA[31],inputA} - {inputB[31],inputB};
             BGTZ,BGEZ: {sign[0],outputR} = {inputA[31],inputA} - {inputB[31],inputB};
-            JALR,JR,JAL,J:outputR = inputA + inputB;
+            SYSCALL,LB,LW,SB,SW,JALR,JR,JAL,J:outputR = inputA + inputB;
             default:outputR = 0;
         endcase
     end
